@@ -1,0 +1,44 @@
+jdbcUrl = jdbc:mysql://123.57.60.214:3306/tyj_weixin_dingyuehao?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+user = root
+password =tyj_2015
+devMode = true
+
+# 微信服务器回调所用的 url 与 token
+
+#url=http://weixin-dev.jfinal.com/weixin
+url=http://www.ividata.cn/tyj_weixin_dingyuehao/weixin
+
+token=zoumeng
+
+# 测试用的账号
+appId=wxdff2819da92b0ac3
+appSecret=df7e421b5c8c52b8c3d4c35a5fc4adf3
+
+#jdbcUrl = jdbc:mysql://10.105.22.197:3306/outwordcheck?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+#jdbcUrl = jdbc:mysql://127.0.0.1/jfinal_weixin?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+
+#jdbcUrl = jdbc:mysql://182.92.224.124/tyj_weixin_dingyuehao?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+#user = root
+#password =look
+
+jdbcUrl_there = jdbc:mysql://123.57.60.214:3306/tyj_weixin_dingyuehao?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+user_there = root
+password_there =tyj_2015
+
+driverClass = com.mysql.jdbc.Driver
+
+#the most connections=maxPoolSize*numThread
+
+maxPoolSize = 300
+minPoolSize = 10
+initialPoolSize = 30
+maxIdleTime = 20
+acquireIncrement = 2
+
+mail.sender.username=771460294@qq.com
+
+mail.sender.password=tyj12345
+
+mail.smtp.host=smtp.qq.com
+
+mail.smtp.auth=true
