@@ -1,0 +1,94 @@
+<!DOCTYPE html >
+<html lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"content="width=device-width, initial-scale=1">
+<title>已完成设备安装</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/myIVI/member.css">
+<link rel="stylesheet" href="../css/myIVI/install.css">
+<link rel="stylesheet" href="../css/common1.css">
+<link rel="stylesheet" href="../bootstrapcss/buttons.css">
+
+<!-- <script type="text/javascript" src="../js/myIVI/install.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery.form.js"></script>
+<script type="text/javascript" src="../js/myIVI/moreInfo.js"> </script> -->
+
+<script type="text/javascript" src="../jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $.getJSON("http://123.57.60.214/tyj_weixin_dingyuehao/api/back_comp",function(data){                
+            $("#car_type").html(data.data.car_type);
+            $("#produce_year").html(data.data.buyYear);
+            $("#car_num").html(data.data.car_no);
+            $("#insurance_time").html(data.data.insurance);
+            $("#insurance_fee").html(data.data.lastYearCosts);
+            $("#install_place").html(data.data.installAddress);
+            $("#device_id").html(data.data.device_id);                             
+        })       
+    })	 
+</script>
+</head>
+<body>
+	<table class="table">
+		<tr class="left">
+			<th class="text-r tdl">设&nbsp;&nbsp;备&nbsp;&nbsp;号：&nbsp;&nbsp;</th>
+			<th class="text-l tdr" id="device_id"></th>
+		</tr>
+		<tr class="left">
+			<th class="alarm f0 text-r font-col3"><span
+				id="alarm_carType"></span></th>
+		</tr>
+		<tr class="left">
+			<th class="text-r tdl">车&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：&nbsp;&nbsp;</th>
+			<th class="text-l tdr" id="car_type"></th>
+		</tr>
+		<tr class="left">
+			<th class="alarm f0 text-r font-col3"><span
+				id="alarm_carType"></span></th>
+		</tr>
+		<tr class="left">
+			<th class="text-r tdl">生产年份：&nbsp;&nbsp;</th>
+			<th class="text-l tdr" id="produce_year"></th>
+		</tr>
+		<tr class="left">
+			<th class="alarm f0 text-r font-col3"><span
+				id="alarm_buyYear"></span></th>
+		</tr>
+		<tr class="left">
+			<th class="text-r">车&nbsp;&nbsp;牌&nbsp;&nbsp;号：&nbsp;&nbsp;</th>
+			<th class="text-l tdr" id="car_num"></th>
+		</tr>
+		<tr class="left">
+			<th class="alarm f0 text-r font-col3"><span
+				id="alarm_carNumber"></span></th>
+		</tr>
+		<tr class="left">
+			<th class="text-r tdl">车险到期：&nbsp;&nbsp;</th>
+			<th class="text-l tdr" id="insurance_time"></th>
+		</tr>
+		<tr class="left">
+			<th class="alarm f0 text-r font-col3"><span
+				id="alarm_carNumber"></span></th>
+		</tr>
+		<tr class="left">
+			<th class="text-r tdl">去年保费：&nbsp;&nbsp;</th>
+			<th class="text-l tdr" id="insurance_fee"></th>
+		</tr>	
+		<tr class="left">
+			<th class="alarm f0 text-r font-col3"><span
+				id="alarm_carNumber"></span></th>
+		</tr>				
+		<tr class="left">
+			<th class="text-r tdl">安装地址：&nbsp;&nbsp;</th>
+			<th class="text-l tdr" id="install_place"></th>
+		</tr>
+		<tr class="left">
+			<th class="alarm f0 text-r font-col3"><span
+				id="alarm_carNumber"></span></th>
+		</tr>
+	</table>
+</body>
+</html>

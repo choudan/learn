@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>会员资料</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/common1.css">
+<link rel="stylesheet" href="../css/myIVI/member.css">
+<script type="text/javascript" src="../bootstrapjs/chart.js"></script>
+<script type="text/javascript" src="../js/myIVI/member_infor.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery.form.js"></script> 
+
+<script type="text/javascript">
+	$(function(){
+		document.getElementById("saimg").style.display="none";
+		//会员资料  
+		   $.getJSON("http://123.57.60.214/tyj_weixin_dingyuehao/api/query_user_info",function(data){
+				/*此处比较特殊，通过dataType来区分三种身份(协议中该字段用来区分data的类型)  */
+			   if(data.dataType==0){
+					alert("您还不是 会员，请先注册");					
+				}else if(data.dataType==1){					
+				   	 $("#member_power").html("普通会员");
+				   	 $("#crt-name").html(data.data.name);
+					 $("#crt-gender").html(data.data.gender);
+					 $("#crt-licenseType").html(data.data.licenseType);
+					 $("#crt-age").html(data.data.age);
+					 $("#crt-licenseNumber").html(data.data.licenseNumber);
+					 $("#crt-allowNumber").html(data.data.allowNumber);					
+				}else if(data.dataType==2){
+				   	 $("#member_power").html("VIP会员");
+				   	 $("#crt-name").html(data.data.name);
+					 $("#crt-gender").html(data.data.gender);
+					 $("#crt-licenseType").html(data.data.licenseType);
+					 $("#crt-age").html(data.data.age);
+					 $("#crt-licenseNumber").html(data.data.licenseNumber);
+					 $("#crt-allowNumber").html(data.data.allowNumber);									
+				}	 
+	     });
+		//头像
+		   $.getJSON("http://123.57.60.214/tyj_weixin_dingyuehao/api/head_img",function(data){
+				document.getElementById("headimg").src=data.data;			 	
+		   }); 
+	});
+</script>
+</head>
+<body>
+	<div class="main">
+		<div>
+			<div class="text-r">
+				<span id="headid" style="color: #0412CA; font-size: 13px;" onclick="editimg();">更换头像</span>
+			</div>
+	
+			<div style="text-align: center;">
+				<img id="headimg"
+					style="width: 20%; display: inline-block; border: none;" src="">
+			</div>
+			<p id="member_power" class="text-c"></p>
+		</div>
+		<div id="saimg">
+			<div class="text-r">
+				<span style="color: #0412CA; font-size: 13px;" onclick="saveHead();">保存</span>
+			</div>
+			<div class="text-c">
+				<img name="head" id="head1"
+					style="width: 15%; display: inline-block; border: none;"
+					src="../images/p1.png" onclick="chosHead(this)"> <img
+					name="head" id="head2"
+					style="width: 15%; display: inline-block; border: none;"
+					src="../images/p2.png" onclick="chosHead(this)"> <img
+					name="head" id="head3"
+					style="width: 15%; display: inline-block; border: none;"
+					src="../images/p3.png" onclick="chosHead(this)"> <img
+					name="head" id="head4"
+					style="width: 15%; display: inline-block; border: none;"
+					src="../images/p0.png" onclick="chosHead(this)">
+			</div>
+		</div>
+	
+		<div class="qx f0">
+			<div class="mar-bottom ">
+				<span>会员权限：</span>
+			</div>
+			<div>
+				&nbsp; &nbsp;<span id="memberPrivileges"></span>
+			</div>
+		</div>
+		<div id="cur" class="f0">
+			<table>
+				<tr>
+					<td class="text-l">用户名：</td>
+					<td class="text-r"><span id="crt-name"></span></td>
+				</tr>
+				<!-- <tr>
+					<td class="text-l">性别：</td>
+					<td class="text-r"><span id="crt-gender"></span></td>
+				</tr> -->
+				<tr>
+					<td class="text-l">年龄：</td>
+					<td class="text-r"><span id="crt-age"></span></td>
+				</tr>
+				<tr>
+					<td class="text-l">驾照类型：</td>
+					<td class="text-r"><span id="crt-licenseType"></span></td>
+				</tr>
+				<tr>
+					<td class="text-l">车牌号：</td>
+					<td class="text-r"><span id="crt-licenseNumber"></span></td>
+				</tr>
+				<tr>
+					<td class="text-l">允许被关注人数：</td>
+					<td class="text-r"><span id="crt-allowNumber"></span></td>
+				</tr>
+				<!-- <tr>
+	   	       <td><span style="color: #0412CA;font-size: 13px;"><center><a href="#" onclick="edit()">编辑</a></center></span></td>
+	   	     </tr> -->
+			</table>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html >
+<html lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>用户注册</title>
+
+<style type="text/css">
+table,td,th
+  {
+  text-align:center;
+  font-family: "幼圆";
+}
+
+table
+  {
+  width:100%;
+}
+
+th,td
+  {
+  height:25px;
+  font-size: 15px;
+}
+
+/* body{
+  background-color: #d7d5d6;  /*灰色背景*/
+} */
+
+.mytittle{
+  height:30px;
+  font-size: 18px;
+  margin:20px 0px 10px 0px;
+  text-align:center;
+  font-family: "幼圆";
+  font-color:#584bf8;
+}
+.left{
+    text-align:left;
+    margin:0px 0px 5px 5px
+}
+</style>
+
+<script type="text/javascript" src="../jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.getJSON("http://123.57.60.214/tyj_weixin_dingyuehao/api/query_user_info",function(data){
+			$("#telephone").text(data.data.telephoneNum);
+			$("#real_name").html(data.data.name);
+			$("#age").html(data.data.age);
+			$("#identity_no").html(data.data.identity_no);
+			$("#email").html(data.data.email);			
+			$("#drive_years").html(data.data.drive_years);
+			$("#home_addr_street").html(data.data.home_addr_street);
+		});
+	});
+</script>
+</head>
+
+<body>	
+ 	<p class="mytittle">您是普通会员，安装设备可享受更多服务!</p>
+		<table>			
+			<tr >
+				<td class="left">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</td>
+				<td id="real_name">姓名</td>
+			</tr>
+			<tr >
+				<td class="left">年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：</td>
+				<td id="age">年龄</td>
+			</tr>			
+			<tr >
+				<td class="left">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</td>
+				<td id="email">邮箱</td>
+			</tr>
+			<tr >
+				<td class="left">驾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：</td>
+				<td id="drive_years">驾龄</td>
+			</tr>
+			<tr>
+				<td class="left">手机号码：</td>
+				<td id="telephone">手机号码</td>
+			</tr>
+			<tr >
+				<td class="left">身份证号：</td>
+				<td id="identity_no">身份证号</td>
+			</tr>
+			<tr >
+				<td class="left">家庭住址：</td>
+				<td id="home_addr_street">家庭住址</td>
+			</tr>
+		</table>
+</body>
+</html>

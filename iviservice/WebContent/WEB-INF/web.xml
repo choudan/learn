@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>iviservice</display-name>
+  
+  <servlet>
+    <servlet-name>PayServlet</servlet-name>
+    <servlet-class>com.unionpay.acp.web.PayServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PayServlet</servlet-name>
+    <url-pattern>/pay</url-pattern>  
+<!--     <url-pattern>/pay</url-pattern>-->  
+	</servlet-mapping>
+  
+  <servlet>
+    <servlet-name>FrontRcvResponse</servlet-name>
+    <servlet-class>com.unionpay.acp.FrontRcvResponse</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FrontRcvResponse</servlet-name>
+    <url-pattern>/frontnotice</url-pattern>  
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>BackRcvResponse</servlet-name>
+    <servlet-class>com.unionpay.acp.BackRcvResponse</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BackRcvResponse</servlet-name>
+    <url-pattern>/backnotice</url-pattern>  
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- <servlet>
+    <description>Count the number of page</description>
+    <display-name>ScanTimeServlet</display-name>
+    <servlet-name>ScanTimeServlet</servlet-name>
+    <servlet-class>com.unionpay.acp.web.ScanTimeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ScanTimeServlet</servlet-name>
+    <url-pattern>/ScanTimeServlet</url-pattern>
+  </servlet-mapping> -->
+</web-app>

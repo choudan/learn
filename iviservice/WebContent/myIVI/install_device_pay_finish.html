@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>安装设备</title>
+<link rel="stylesheet" href="../css/common1.css">
+<link rel="stylesheet" href="../css/myIVI/install.css">
+<link rel="stylesheet" href="../bootstrapcss/buttons.css">
+<script type="text/javascript" src="../js/jquery.form.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+	    var date = new Date();
+	    var curYear = date.getFullYear();
+	    for(var i=0; i<20; i++ ){
+	        var sel = document.getElementById("buyYear");
+	        var value = curYear - i;
+	        sel.options.add(new Option(value, value));
+	    }		
+	});    
+	
+	//车牌号验证
+	function clear_carNumber(){
+	    document.getElementById("carNumber").innerHTML = "";
+	}
+	function check_carNumber(e){
+	    if(e.value.replace(/\s+/g,"") == ""){
+	        document.getElementById("carNumber").innerHTML = "请输入您的车牌号！";
+	        j2 = false;
+	    }
+	    else if(!(/^[\u4e00-\u9fa5][A-Z_0-9]{6}$/.test(e.value))){
+	        document.getElementById("carNumber").innerHTML = "您输入的车牌号不正确！";
+	        j2 = false;
+	    }
+	    else {
+	        j2 = true;
+	    }
+	}
+	
+    function subForm() {
+		// according the background to edit
+		var check = document.getElementById("statement").checked; //是否勾选阅读声明
+		var obj= new Object();
+		obj.carType = $("#carType").val();
+		obj.buyYear = $("#buyYear").val();
+		obj.carNumber = $("#carNumber").val();
+		obj.insurance = $("#insurance").val();
+		obj.lastYearCosts = $("#lastYearCosts").val();
+		obj.installAddress = $("#installAddress").val();
+		obj.device_id = $("#device_id").val();	
+		if(obj.device_id.length==0){
+			alert("设备号不能为空");
+			return;
+		}else if(obj.insurance.length==0){
+			alert("车险到期不能为空");
+			return;			
+		}else{
+			if(!check){
+				return;	
+			}else if(check){
+				var flag=confirm("确认提交吗");
+				if(flag){
+					$.ajax({
+						type : "get",
+						dataType : "json",
+						url : "http://123.57.60.214/tyj_weixin_dingyuehao/api/installInfo",
+						// 将对象转换成字符串，并传递给后台
+						data : {
+							"installInfo" : JSON.stringify(obj)
+						},
+						success : function(data) {
+							alert(data.data.submitFail);
+						},
+						error : function() {
+							alert("提交失败，请重新安装");
+						}
+					})								
+				}else{
+					return;
+				}
+			}
+		}
+	}
+</script>
+
+</head>
+<body>
+	<div class="main">
+		<div id="page1">
+			<form method="get" action="http://123.57.60.214/tyj_weixin_dingyuehao/api/complete_info">
+				<div class="f1 line">必须填写</div>
+				<div class="center">
+					<span style="font-color:#0412CA; font-size: 15px">你已购买设备，请将信息补充完整</span>
+				</div>
+				<table class="f1 table1">
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3"><span
+							id="alarm_carNumber"></span></th>
+					</tr>
+					<tr class="left">
+						<th class="text-r tdl">设&nbsp;&nbsp;备&nbsp;&nbsp;号：&nbsp;&nbsp;</th>
+						<th class="text-l tdr">
+						<input placeholder="请在安装后填写" class="input1" id="device_id"></th>
+					</tr>
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3"><span
+							id="alarm_carNumber"></span></th>
+					</tr>
+					<tr class="left">
+						<th class="text-r tdl">车险到期：&nbsp;&nbsp;</th>
+						<th class="text-l tdr">
+							<input type="date" class="laydate-icon input1" id="insurance" placeholder="请输入车险到期时间">
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3"><span
+							id="alarm_carNumber"></span></th>
+					</tr>			
+				</table>			
+				<div class="f1 line">建议填写</div>
+				<table class="f1 table1">
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3"><span
+							id="alarm_carNumber"></span></th>
+					</tr>	
+					<tr class="left">
+						<th class="text-r tdl">车&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：&nbsp;&nbsp;</th>
+						<th class="text-l tdr">
+							<input id="carType" name="carType"
+								class="input1" placeholder="请输入您的车型" onFocus="clear_carType()"
+								onBlur="check_carType(this)">
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3"><span
+							id="alarm_carType"></span></th>
+					</tr>
+					<tr class="left">
+						<th class="text-r tdl">生产年份：&nbsp;&nbsp;</th>
+						<th class="text-l tdr">
+							<select id="buyYear" name="buyYear" class="input1"></select> <!-- 动态加载年份-->
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3"><span
+							id="alarm_buyYear"></span></th>
+					</tr>
+					<tr class="left">
+						<th class="text-r">车&nbsp;&nbsp;牌&nbsp;&nbsp;号：&nbsp;&nbsp;</th>
+						<th class="text-l tdr"><input id="carNumber" name="carNumber"
+							class="input1" placeholder="请输入您的车牌号" onFocus="clear_carNumber()"
+							onBlur="check_carNumber(this)"></th>
+					</tr>					
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3"><span
+							id="alarm_carNumber"></span></th>
+					</tr>
+					<tr class="left">
+						<th class="text-r tdl">去年保费：&nbsp;&nbsp;</th>
+						<th class="text-l tdr">
+							<select name="lastYearCosts" id="lastYearCosts" class="input1 ">
+								<option value="1">1000-2000</option>
+								<option value="2">2000-3000</option>
+								<option value="3">3000-4000</option>
+								<option value="4">4000-5000</option>
+								<option value="5">5000-6000</option>
+								<option value="6">6000-7000</option>
+								<option value="7">7000以上</option>
+							</select>
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3"><span
+							id="alarm_carNumber"></span></th>
+					</tr>
+					<tr class="left">
+						<th class="text-r tdl">安装地址：&nbsp;&nbsp;</th>
+						<th class="text-l tdr">
+						<select name="installAddress" id="installAddress" class="input1 ">
+							<option value="AD01">北京市海淀区车公庄西路乙19号华通大厦B座北塔1021室</option>
+						</select></th>
+					</tr>
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3"><span
+							id="alarm_carNumber"></span></th>
+					</tr>	
+					<tr class="left">
+						<th class="text-c tdl">
+							<input style="height: 15px; width: 15px; margin: 5px; font-color: #0412CA;"
+								id="statement" type=checkbox>
+						</th>
+						<th>我已阅读并同意《<a href="http://www.ivichina.cn/#page3"
+							style="color: #f00;">IVI用户手册</a>》中的内容
+						</th>
+					</tr>		
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3">
+						<span id="alarm_carNumber"></span></th>
+					</tr>		
+					<tr class="left">
+						<td colspan="2" class="text-c">
+						<a href="#" id="button1"
+							class="button button-rounded button-flat-primary bl ctr"
+							style="background-color: #0412CA;" onclick="subForm();">保存</a>
+						</td>
+					</tr>
+				</table>				
+			</form>
+		</div>
+	</div>
+</body>
+</html>

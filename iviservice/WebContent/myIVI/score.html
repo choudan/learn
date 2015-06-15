@@ -1,0 +1,97 @@
+<!DOCTYPE html >
+<html lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"content="width=device-width, initial-scale=1" />
+<title>我的积分</title>
+
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/myIVI/score.css"">
+<script type="text/javascript" src="../js/jquery.js" ></script>
+<style type="text/css"></style>
+<script type="text/javascript">
+       /* $(function(){
+    	   var data = [{"date":"2014-09-12","type":"1","score":"1"},
+    	               {"date":"2014-10-12","type":"1","score":"1"},
+    	               {"date":"2014-11-1","type":"1","score":"1"},
+    	               {"date":"2014-11-3","type":"1","score":"1"},
+    	               {"date":"2014-12-12","type":"1","score":"1"},
+    	               {"date":"2014-12-13","type":"1","score":"1"}]
+    	    $.getJSON("__",function(data){ 
+        	 for(var i = 0; i < data.length; i++){
+	        	 var length = $("#score tr").length;    //获取表格的行数
+	        	 var Tb = $("#score");                  //获取表格
+	        	 var clone = $("#score #tr0").clone(true);   //创建第一行副本
+	        	 clone.attr("id","tr" + (i+1));   //为该行添加id	        	
+	        	 clone.find("td").eq(0).html(data[i].date);  //为该列附日期
+	        	 clone.find("td").eq(1).html(data[i].type);  //为该列附类型
+	        	 clone.find("td").eq(2).html(data[i].score);  //为该列附分值
+	        	 clone.appendTo(Tb);                    //添加到表格上
+        	 }
+           }); 
+       }) */
+	    
+	//获取积分明细第一行数据
+	$(function() {
+		$.getJSON("http://123.57.60.214/tyj_weixin_dingyuehao/api/points_info",
+			function(data) {
+				if(data.statusCode==-1){
+					if(data.valid==1){
+						$("#mySum").html(data.data.sum);
+						$("#data0").html(data.data.active_time);
+						$("#score0").html(data.data.sign_up);
+						$("#data1").html(data.data.date);
+						$("#score1").html(data.data.active);					
+					}else{
+						$("#mySum").html("先注册喔");					
+					}					
+				}else{
+					alert("网络异常");
+				}
+			});
+	})
+</script>
+</head>
+<body>
+	<div class="main">
+		<table>
+			<tr>
+				<td width="50%">
+					<div>
+						<span class="f1 font-col5"> 我的积分:&nbsp;&nbsp;</span> 
+						<span class="f5 font-col4" id="mySum"></span>				
+					</div>
+				</td>
+				<td style="text-align: right;">
+					<a href="integral_exchange.html">
+						<img src="../images/myIVI/jifen.png" width="80%">
+					</a>	
+					<p  style="vertical-align:bottom;width:120%; text-align:center">点击“积分兑换”查看可兑换礼品</p>		
+				</td>
+			</tr>		
+		</table>
+		<p class="f1">积分明细:&nbsp;&nbsp;</p>
+		<table id="score" class=" f1 score"
+			style="border-collapse: collapse; width: 100%;">
+			<tr id="tr0">
+				<td style="width: 35%">时间</td>
+				<td style="width: 40%">操作</td>
+				<td style="width: 20%">积分</td>
+			</tr>
+			<tr>
+				<td id="data0"></td>
+				<td>签到总积分</td>
+				<td id="score0"></td>
+			</tr>
+			<tr>
+				<td id="data1"></td>
+				<td>激活设备积分</td>
+				<td id="score1"></td>
+			</tr>
+		</table>
+		<div style="margin-top: 8px;width:100%">
+			<center><a href="ranking.html" class="f1 font-col5 decoration text-l tdl">点击查看积分排名</a></center>				
+		</div>
+	</div>
+</body>
+</html>

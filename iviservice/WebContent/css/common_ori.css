@@ -1,0 +1,104 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+.f0{
+	font-size:14px;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clear{
+    clear: both;
+}
+.header{
+    padding-bottom: 12px;
+}
+.header .nav{
+    display: inline-block;
+    margin-right: 1%;
+    border:1px dashed #0014c8;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    text-align: center;
+    font-family: Tahoma;
+    font-size: 6px;
+    overflow: hidden;
+}
+.header .nav a{
+    display: block;
+    color: #000;
+    text-decoration: none;
+}
+.header .nav.on{
+    background: #0014c8;
+}
+.header .nav.on a{
+    color: #FFF;
+}
+.header .logo{
+    height: 100%;
+    float: right;
+    background: url(../images/logo.png) no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+}
+.tit{
+	width:100%;
+	height:40px;
+    font-size: 14px;
+    line-height: 32px;
+    border-bottom: 1px solid #CCC;
+    border-top:1px solid #CCC;
+}
+.plate{
+    padding-bottom: 12px;
+    padding-top: 12px;
+}
+.plate h3{
+    font-size: 13px;
+}
+.font-col2{
+	color: #fff;  /*白色*/
+}
+
+.f1{
+	font-size: 30px;
+}
+.f2{
+	font-size: 18px;
+}
+.f3{
+	font-size: 23px;
+}
+.f4{
+  font-size: 20px;	
+}
+.f5{
+	font-size: 22px;	
+}
+.f6{
+	font-size: 11px;
+}
+.f7{
+	font-size: 12px;
+}
+.pad1{
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.pad2{
+	padding-top: 5px;
+}
+.mar1{
+	margin-right: 10px;
+}
+.font_fam1{
+	font-family:ArialHebrew,kaiti;
+}

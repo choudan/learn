@@ -1,0 +1,134 @@
+<!DOCTYPE html >
+<html lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"content="width=device-width, initial-scale=1" />
+<title>近期驾驶习惯趋势图</title>
+<link rel="stylesheet" href="../bootstrapcss/bootstrap.min.css">
+<link rel="stylesheet" href="../bootstrapcss/buttons.css">
+<link rel="stylesheet" href="../bootstrapcss/main.css">
+<link rel="stylesheet" href="../bootstrapcss/prettify.css">
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/driver/chart.css">
+<script type="text/javascript" src="../bootstrapjs/chart.js"></script>
+<script type="text/javascript" src="../js/jquery.js" ></script>
+<script type="text/javascript"> 	
+	$(function() {
+		//按钮颜色	
+		var btns = document.getElementById("btn-group");
+		var btn = btns.getElementsByTagName('span');
+		for (var i = 1; i < btn.length; i++) {
+			btn[i].style.backgroundColor = "#dcdcdc";
+			btn[i].style.color = "#9b9696";
+		}
+		btn[0].style.backgroundColor = "#cc0000";
+		btn[0].style.color = "#fff";
+
+		//动态获取图表下方的数据
+		$.getJSON("http://123.57.60.214/tyj_weixin_dingyuehao/api/driving_habits_today",
+			function(data) {
+				if(data.statusCode==1){
+					alert("您还不是会员，暂无数据")
+					$("#day_alarms").html("");
+					$("#total_time").html("");
+					$("#total_length").html("");
+					$("#average_alarm_hour").html("");
+					$("#average_alarm_kilometer").html("");
+					$("#seriousAlarmRate").html("");
+					$("#seriousAlarms").html("");					
+				}else{
+					$("#day_alarms").html(data.data.dayAlarms);
+					$("#total_time").html(data.data.totalTime);
+					$("#total_length").html(data.data.totalLength);
+					$("#average_alarm_hour").html(data.data.averageAlarmHour);
+					$("#average_alarm_kilometer").html(data.data.averageAlarmKilometer);
+					$("#seriousAlarmRate").html(data.data.seriousAlarmRate);
+					$("#seriousAlarms").html(data.data.seriousAlarms);					
+				}
+		});
+	});
+
+	function iFrameHeight() {
+		var ifm = document.getElementById("iframepage");
+		var subWeb = document.frames ? document.frames["iframepage"].document
+				: ifm.contentDocument;
+		if (ifm != null && subWeb != null) {
+			ifm.height = subWeb.body.scrollHeight;
+			ifm.width = subWeb.body.scrollWidth;
+		}
+	}
+	
+	function color(e) {
+		var btns = document.getElementById("btn-group");
+		var btn = btns.getElementsByTagName('span');
+		for (var i = 0; i < btn.length; i++) {
+			btn[i].style.backgroundColor = "#dcdcdc";
+			btn[i].style.color = "#9b9696";
+		}
+		e.style.backgroundColor = '#cc0000';
+		e.style.color = "#fff";
+		var btnid = document.getElementById(e);
+		if (btnid == "three") {
+			document.getElementById("iframepage").src = "threedays.html";
+		} else if (btnid == "seven") {
+			document.getElementById("iframepage").src = "sevendays.html";
+		} else if (btnid == "onemonth") {
+			document.getElementById("iframepage").src = "onemonth.html";
+		} else {
+			document.getElementById("iframepage").src = "sixmonth.html";
+		}
+	}
+</script>
+</head>
+<body>
+	<div>
+		<center>
+			<span class="f1 font-col3">红色折线为严重告警总次数 </span> 
+			<span class="f1 font-col4">橙色折线为告警总次数</span>
+		</center>
+	</div>
+	<div class="main" style="text-align: center;">
+		<iframe src="threedays.html" id="iframepage" frameborder="0"
+			scrolling="no" marginheight="0" marginwidth="0"
+			onLoad="iFrameHeight()"> 
+		</iframe>
+	</div>
+
+	<div  class=" f1" id="btn-group">
+       <span id="three" class="button button-rounded button-flat-caution mar back-col1 font-col1 " onclick="color(this);" >3天内</span> 
+       <span id="seven" class="button button-rounded button-flat-caution mar back-col1 font-col1 "onclick="color(this);">7天内</span> 
+       <span id="onemonth" class="button button-rounded button-flat-caution mar back-col1 font-col1" onclick="color(this);">一个月内</span> 
+       <span id="sixmonth" class="button button-rounded button-flat-caution mar back-col1 font-col1" onclick="color(this);">六个月内</span>  
+     </div>
+    <table  class=" f1" style="padding-left: 8px;padding-right: 8px;">
+       <tr>
+         <td  class="text-l td">今日告警总次数：</td>
+         <td  class="text-r "><span id="day_alarms"></span><span>次</span></td>
+       </tr> 
+       <tr>
+         <td  class="text-l td">行驶总时长：</td>
+         <td  class="text-r "><span id="total_time"></span><span>h</span></td>
+       </tr> 
+       <tr>
+         <td  class="text-l td">行驶总里程：</td>
+         <td  class="text-r "><span id="total_length"></span><span>km</span></td>
+       </tr> 
+       <tr>
+         <td  class="text-l td">平均每小时告警次数：</td>
+         <td  class="text-r "><span id="average_alarm_hour"></span><span>次</span></td>
+       </tr> 
+       <tr>
+         <td  class="text-l td">平均每公里告警次数：</td>
+         <td  class="text-r "><span id="average_alarm_kilometer"></span><span>次</span></td>
+       </tr> 
+       <tr>
+         <td  class="text-l td">严重告警次数：</td>
+         <td  class="text-r "><span id="seriousAlarms"></span></td>
+       </tr> 
+       <tr>
+         <td  class="text-l td">严重告警率：</td>
+         <td  class="text-r "><span id="seriousAlarmRate"></span></td>
+       </tr> 
+     </table>
+</body>
+</html>

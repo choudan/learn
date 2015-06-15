@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IVI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/common_ori.css">
+<link rel="stylesheet" href="css/load.css">
+<link rel="stylesheet" href="css/index.css">
+<script src="http://www.eyoo.net.cn/templets/eyoo/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/load.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    $(function() {
+		common.run();
+		index.run();
+		$("#in2").click(function() {
+			$("#in1").slideToggle("slow");
+			$("#in2").css('display', 'none');
+		});
+		$("#in1").click(function() {
+			$("#in1").css('display', 'none');
+ 			$("#in2").slideToggle("slow");
+ 		});
+/* 		//驾驶得分
+ */		$.getJSON("http://123.57.60.214/tyj_weixin_dingyuehao/api/drive_points",
+			function(data) {
+				var personList = data.data;
+				if(personList.length==0){
+					$("#drivingScore").html("服务器出错了"); //驾驶得分				
+				}else{
+					$("#drivingScore").html(personList[0].points); //驾驶得分
+					$("#beatPercentage").html(personList[0].beat_percent);							
+				}					
+			});
+			
+/* 		限速、偏离、城市、行人、车辆、打折	
+*/		$.getJSON("http://123.57.60.214/tyj_weixin_dingyuehao/api/user_data_main",
+			function(data) {
+				$("#speeding").html(data.data.speeding);
+				$("#laneout").html(data.data.laneout);
+				$("#city_bang").html(data.data.city_bang);
+				$("#walker_bang").html(data.data.walker_bang);
+				$("#bang").html(data.data.bang);
+				$("#discount").html(data.data.discount);
+			});
+/* 		//信息栏
+ */		$.getJSON("http://123.57.60.214/tyj_weixin_dingyuehao/api/message_bar",
+			function(data) {
+				var dataLength = data.data.message.length;
+				var mess = data.data.message;
+				if (typeof(mess) == "undefined"){
+				    alert("滚动消息未定义类型");
+					for (var i = 0; i < dataLength; i++) {
+						mess[i] = mess[i]+"<br />";
+					}				
+				}else{
+					for (var i = 0; i < dataLength; i++) {
+						mess[i] = mess[i]+"<br />";
+					}				
+				}
+				$("#in2").html(mess);
+				$("#in1").html(mess);
+			});
+/* 		//天气指数
+ */		$.getJSON("http://123.57.60.214/tyj_weixin_dingyuehao/api/weather",
+			function(data) {
+				$("#weatherIndex").html(data.data.weatherIndex);
+			});
+/* 		//限行尾号
+ */		$.getJSON("http://123.57.60.214/tyj_weixin_dingyuehao/api/car_number_limit",
+			function(data) {
+	 			if(data.dataType==1)
+					$("#limitNumber").html(data.data);
+	 			else{
+					$("#limitNumber").html(data.data.limitNumber); 				
+	 			}
+			});
+		//头像
+		$.getJSON("http://123.57.60.214/tyj_weixin_dingyuehao/api/head_img",
+			function(data) {
+				document.getElementById("selfimg").src = data.data;
+			});
+	});
+    /* function updateOrientation(){
+        location.reload() ;
+        } */
+       
+   </script>
+ <style type="text/css">    										
+#scro1{
+     height:54px;
+     overflow:hidden;
+     }
+#scro1 div{
+     display:block;
+     line-height:18px;
+     }	
+     
+#scroll{
+	height:18px;
+	overflow:hidden;
+    }
+#scroll a{
+	display:block;
+	line-height:18px;
+	text-decoration:none;
+	}						
+	     					  
+    </style>
+</head>
+<body >
+<div class="ruchang"><img src="images/ruchang.png" /></div>
+<div class="main">
+    <div class="header">
+        <div class="nav on " style="font-size: 11px;"><a href="driver/driver.html">中国好司机</a></div>
+        <!-- a href="javascript:void(0);" onclick="js_method()" -->
+        <div class="nav " style="font-size: 11px;"><a href="myIVI/myIVI.html">我的IVI</a></div>
+        <div class="nav" style="font-size: 11px;"><a href="IVIclass/IVIclass.html">IVI课堂</a></div>
+        <div class="logo"></div>
+    </div>
+    <div class="page">
+        <div class="tit">
+           <!--   <h2>行车助手</h2>  -->
+            <div class="fl pad2">
+              <h2 >行车助手</h2>
+            </div>
+            <div class="fr"   style="width:8%;height: 40px;"></div>
+            <div class="pad1 fr">
+              <img id="selfimg"  class="mar1" style="height: 36px;"  src="">
+              <img class="mar1" style="height: 36px;"  src="images/driver/jiahao.png">
+              <img style="height: 36px;"  src="images/driver/jiahao.png">
+            </div>
+            
+        </div>
+        <div class="plate">
+            <div class="sm_disc fl">
+                <div class="ms_disc df_ms" >
+                    <div class="disc disc_df f3 font_fam1" id="weatherIndex">
+                          
+                    </div>
+                
+                </div>
+                <h3>天气指数</h3>
+                <div class="ms_disc">
+                    <div class="disc disc_xh  f3 font_fam1"  id="limitNumber">  
+                      
+                    </div>
+                    
+                </div>
+                <h3 id="xhao">今日限号</h3>
+            </div>
+            
+            <div onclick=" window.location='driver/drive_ranking.html';" >
+           <div id="dscale" class="ma_disc fr" >
+                <h3>您驾驶习惯击败全国车友比例</h3>
+               <!-- <a href="driver/ranking.html"> -->
+               <div class="disc disc_bl font_fam1" >
+                 <span id="beatPercentage" > </span> </div>
+            </div>
+            <div id="dscore" class="ma_disc fr" style="display: none;">
+                <h3>驾驶得分</h3>
+                <div class="disc disc_bl font_fam1" ><span   id="drivingScore"> </span></div>
+            </div>
+            </div>
+            <script>
+                 //驾驶得分和车友比例交替显示
+				 var td1=document.getElementById("dscale");
+				 var b=0;
+				 function fun1(){
+				  if(b==0){
+				   b=1;
+				   $("#dscale").css("display","block");
+				   $("#dscore").css("display","none");
+				  }else{
+				   b=0;
+				    $("#dscale").css("display","none");
+					$("#dscore").css("display","block");
+				  }
+				 }
+				 setInterval("fun1()",3000);
+             </script>
+            <div class="clear"></div>
+        </div>
+        <div class="warn">
+            <div class="warn_item ico_xs"><b id="speeding" class="font_fam1"></b><span>限速提示&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+            <div class="warn_item ico_pl"><b id="laneout" class="font_fam1"></b><span>车道偏离&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+            <div class="warn_item ico_cspz"><b id="city_bang" class="font_fam1"></b><span>城市前碰撞</span></div>
+            <div class="warn_item ico_xrpz"><b id="walker_bang" class="font_fam1"></b><span>行人前部碰撞</span></div>
+            <div class="warn_item ico_clpz"><b id="bang" class="font_fam1"></b><span>车辆前部碰撞</span></div>
+         
+        </div>
+        <div class="notice">
+            <div class="wz_notice" >当前状况下我的下年保险金额预期可享受折扣<span id="discount"></span>%</div>
+            <div class="tool">
+                <li id="in1" style="display: block;overflow: hidden; height: 18px;">
+                <div id="scro1" >
+                        
+                </div>
+                <div id="scro2"></div>                                     
+               </li> 
+            
+             </div> 
+             
+ 
+             <div class="tool" >
+                   <div  id="in2" style="display: none;margin-top: 5px;margin-left:10px;  line-height: 25px;font-size: 14px;">
+                   
+                  </div>
+             </div>     
+              <div class="tool">   
+                <li ><a href="driver/drive_chart.html">近期驾驶习惯趋势图</a></li>
+            </div>
+        </div>
+    </div> 
+</div>
+  <script type="text/javascript">
+          
+                     var  area=document.getElementById("in1");  
+                          // 获取滚动区域，也就是新闻内容的中间部分div的id。用变量area来表示它。  
+                      var p1=document.getElementById("scro1");     
+                      var p2=document.getElementById("scro2");   
+                        if(area.offsetHeight<=p1.offsetHeight){           
+                         //当p1的内容超过了滚动区域area的高的时候，  
+                                 p2.innerHTML=p1.innerHTML;   
+                        //就要让p2的内容跟p1一模一样（为循环滚动做好准备）    
+                        }     
+                         function  goUp(){            
+                    	     area.scrollTop++;   
+                    	     if(area.scrollTop>=p1.offsetHeight){  
+                                 //当p1刚好超出滚动区域area的时候，    
+                               area.scrollTop=0;     //就立马让p1又退回到滚动区域内       
+                                  }  
+                             
+                      }                    
+                       var myset=setInterval("goUp()",300);   
+                    //每1秒就执行一下goUp函数,并通过一个变量myset来控制这个定时器。
+                          area.onmouseover=function(){     
+	                       clearInterval(myset);           
+	                          //鼠标放到滚动区域上，清除定时器－－停止滚动      
+	                         }    
+	                      area.onmouseout=function(){     
+		                      myset=setInterval("goUp()",300);     
+		                        //鼠标离开滚动区域，定时器又开始工作－－继续滚动       
+		               } 
+
+     </script>            
+</body>
+
+</html>

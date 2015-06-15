@@ -1,0 +1,322 @@
+<!DOCTYPE html >
+<html lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>用户注册</title>
+<link rel="stylesheet" href="../css/myIVI/install.css">
+<link rel="stylesheet" href="../css/common1.css">
+<link rel="stylesheet" href="../bootstrapcss/buttons.css">
+
+<script type="text/javascript" src="../jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../js/myIVI/install.js"></script>
+</head>
+
+<body id="inputPage" onload="createCode()" onorientationchange="updateOrientation()">
+	<div class="main">
+		<div id="page1">
+			<form method="get"action="http://123.57.60.214/tyj_weixin_dingyuehao/api/install_openid">
+				<div class="f1 line">建议填写</div>
+				<table class="f1 table1">
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3">
+							<span id="alarm_carType"></span>
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="text-r tdl">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：&nbsp;&nbsp;</th>
+						<th class="text-l tdr">
+							<input id="name" name="name" class="input1"  onFocus="clear_carType()"
+								onBlur="check_carType(this)"/>
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3">
+							<span id="alarm_carType"></span>
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="text-r tdl">年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：&nbsp;&nbsp;</th>
+						<th class="text-l tdr">
+							<input id="age" name="age" class="input1"  onFocus="clear_carType()"
+								onBlur="check_carType(this)"/>
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3">
+							<span id="alarm_buyYear"></span>
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="text-r">驾照类型：&nbsp;&nbsp;</th>
+						<th class="text-l tdr">
+							<select name="lastYearCosts" id="type" class="input1 ">
+								<option value="1">A1</option>
+								<option value="2">A2</option>
+								<option value="3">A3</option>
+								<option value="4">B1</option>
+								<option value="5">B2</option>
+								<option value="6">C1</option>
+								<option value="7">C2</option>
+								<option value="8">C3</option>
+								<option value="9">C4</option>
+							</select>
+						</th>
+					</tr>					
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3">
+							<span id="alarm_carNumber"></span>
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="text-r tdl">驾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：&nbsp;&nbsp;</th>
+						<th class="text-l tdr">
+							<select id="drive_year" name="drive-year" class="input1">
+								<option value="1">1 年</option>
+								<option value="2">2 年</option>
+								<option value="3">3 年</option>
+								<option value="4">4 年</option>
+								<option value="5">5 年</option>
+								<option value="6">6 年</option>
+								<option value="7">7 年</option>
+								<option value="8">8 年</option>
+								<option value="9">9 年</option>
+								<option value="10">10 年</option>
+								<option value="11">11 年</option>
+								<option value="12">12 年</option>
+								<option value="13">13 年</option>
+								<option value="14">14 年</option>
+								<option value="15">15 年</option>
+								<option value="16">16 年</option>
+								<option value="17">17 年</option>
+								<option value="18">18 年</option>
+								<option value="19">19 年</option>
+								<option value="20">20 年</option>
+							</select>
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3">
+							<span id="alarm_carNumber"> </span>
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="text-r tdl">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：&nbsp;&nbsp;</th>
+						<th class="text-l tdr">
+							<input id="email" name="email" class="input1"  onFocus="clear_carType()"
+								onBlur="check_carType(this)"/>
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3">
+							<span id="alarm_carNumber"> </span>
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="text-r tdl">身份证号：&nbsp;&nbsp;</th>
+						<th class="text-l tdr">
+							<input id="identity_no" name="identity_no" class="input1"  onFocus="clear_carType()"/>
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3">
+							<span id="alarm_carNumber"></span>
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="text-r tdl">家庭住址：&nbsp;&nbsp;</th>
+						<th class="text-l tdr">
+							<input id="adress" name="adress" class="input1"  onFocus="clear_carType()"
+								/>
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3">
+							<span id="alarm_carNumber"></span>
+						</th>
+					</tr>
+				</table>
+				
+				<div class="f1 line">必须填写</div>
+				<table class="f1 table1">
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3">
+							<span id="alarm_carNumber"></span>
+						</th>
+					</tr>
+					<tr class="left">
+						<th class="text-r tdl">手机号码：&nbsp;&nbsp;</th>
+						<th class="text-l tdr" >
+							<input placeholder="请输入有效手机号码" class="input1" id="phoneNumber"
+								onFocus="tele1()" onBlur="checktele(this);" />
+						</th>
+					</tr>
+				
+					<tr>
+						<td colspan="2" class="text-c" style="font-size:10px;padding: 8px 0px 8px 0px;">
+							<span id="telephone" ></span>
+						</td>
+					</tr>
+					<tr id="code" class="left">
+						<th class="text-r tdl">验&nbsp;&nbsp;证&nbsp;&nbsp;码：&nbsp;&nbsp;</th>
+						<td class="text-l tdr">
+							<input id=input1 name="adress" class="text-l w2 tdl input3"  onFocus="clear_carType()"
+									onBlur="check_carType(this)"/>
+							<input type="text" onclick="createCode()" readonly="readonly"
+									id="checkCode" class="code unchanged input2"/>							
+						</td>
+					</tr>
+									
+					<tr class="left">
+						<th class="alarm f0 text-r font-col3">
+							<span id="alarm_carNumber"></span>
+						</th>
+					</tr>
+					<tr class="left">
+						<td colspan="2" class="text-c">
+							<a href="#" id="button1"
+								class="button button-rounded button-flat-primary bl ctr"
+								style="background-color: #0412CA;" onclick="put();">注册
+							</a>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	
+	
+	
+	
+	<!-- <div id="inputPage">
+		<form id="form1" method="get"action="http://182.92.224.124/tyj_weixin_dingyuehao/api/installInfo">
+			<div class="f1 line">必填</div>
+			<table class="f1 table1">
+				<tr>
+					<td class="text-r w2 tdl">手机号码：&nbsp;&nbsp;</td>
+					<td class="tdr">
+						<input type="text" class="input1 f0"
+							placeholder="输入您的手机号码"  
+							onFocus="tele1()" 
+							onBlur="checktele(this.id);">
+					</td>
+				</tr>
+			
+				<tr id="code">
+					<td class="text-r w2 tdl">验证码：&nbsp;&nbsp;</td>
+					<td class="tdr">
+						<input type="text" onclick="createCode()" readonly="readonly"
+							id="checkCode" class="code unchanged"><br /></td>
+				</tr>
+
+				绑定APP，有效性待定 
+				 <tr>
+	          	<td></td>
+	          	<td class="alarm f0 text-r font-col3"><span id="span1"></span></td>
+	          </tr>
+	          <tr><td colspan="2">
+	              <div class="f0 font-col6" style="margin-top:2px; margin-bottom: 2px;text-decoration: underline" onclick="binding()">
+	               <span>如果您已经在中国好司机App端完成注册，请在填写手机后直接点击此处，绑定App，无需再次注册，即刻享受同步服务</span>
+	               </div>
+	          </td></tr>
+
+			</table>
+			<div class="f1 line">选填</div>
+			<table class="f1 table1">
+				<tr>
+					<td class="text-r w2 tdl">姓名：&nbsp;&nbsp;</td>
+					<td class="tdr"><input type="text" class="input1 f0"
+						placeholder="输入您的姓名" id="name" name="name"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="alarm f0 text-r font-col3"></td>
+				</tr>
+				<tr>
+					<td class="text-r w2 tdl">年龄：&nbsp;&nbsp;</td>
+					<td class="tdr"><select class="input1 f0" id="age" name="age">
+							<option value="20-25">20-25</option>
+							<option value="25-30">25-30</option>
+							<option value="30-35">30-35</option>
+							<option value="35-40">35-40</option>
+							<option value="40-45">40-45</option>
+							<option value="45-50">45-50</option>
+							<option value="50-55">50-55</option>
+							<option value="55-60">55-60</option>
+							<option value="60-65">60-65</option>
+							<option value="65-70">65-70</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="alarm f0 text-r font-col3"></td>
+				</tr>
+				<tr>
+					<td class="text-r w2 tdl">身份证号：&nbsp;&nbsp;</td>
+					<td class="tdr"><input type="text" class="input1 f0"
+						placeholder="输入您的身份证号" name="identity_no" id="identity_no"></td>
+				</tr>
+				<tr class="alarm"></tr>
+				<tr>
+					<td class="text-r w2 tdl">邮箱：&nbsp;&nbsp;</td>
+					<td class="tdr"><input class="input1 f0" placeholder="输入您的邮箱"
+						name="email" id="email"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="alarm f0 text-r font-col3"></td>
+				</tr>
+				<tr>
+					<td class="text-r w2 tdl">驾龄：&nbsp;&nbsp;</td>
+					<td class="tdr">
+					<select id="drive_year" name="drive-year" class="input1">
+							<option value="1">1 年</option>
+							<option value="2">2 年</option>
+							<option value="3">3 年</option>
+							<option value="4">4 年</option>
+							<option value="5">5 年</option>
+							<option value="6">6 年</option>
+							<option value="7">7 年</option>
+							<option value="8">8 年</option>
+							<option value="9">9 年</option>
+							<option value="10">10 年</option>
+							<option value="11">11 年</option>
+							<option value="12">12 年</option>
+							<option value="13">13 年</option>
+							<option value="14">14 年</option>
+							<option value="15">15 年</option>
+							<option value="16">16 年</option>
+							<option value="17">17 年</option>
+							<option value="18">18 年</option>
+							<option value="19">19 年</option>
+							<option value="20">20 年</option>
+					</select>
+					</td>
+				</tr>
+				<tr class="alarm"></tr>
+				<tr>
+					<td class="text-r tdl">家庭住址：&nbsp;&nbsp;</td>
+					<td class="text-l tdr"><select name="home_addr_province"
+						id="Nowprovince" class="input3 "><option value=""></option></select>
+						<select name="home_addr_city" id="Nowcity" class="input3 "></select>
+						<select name="home_addr_district" id="Nowdistrict" class="input3 "></select></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input name="home_addr_street" id="home_addr_street"
+						type="text" class="sp form-control input1" placeholder="详细地址描述">
+					</td>
+				</tr>
+				<tr>
+					<td><br></td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2"><a href="#" id="button1"
+						class="button button-rounded button-flat-primary bl ctr"
+						style="background-color: #0412CA;" onclick="validate();">注册</a></td>
+				</tr>
+			</table>
+		</form>
+	</div> -->
+</body>
+</html>

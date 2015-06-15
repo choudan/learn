@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+	table{
+		width:100%;
+		text-align:center;
+	}
+/* 积分规则 */
+	.rule,.rule td{
+		border:1px #e1dbdb solid;
+		cellspacing:0;
+		border-collapse: collapse;
+		text-align:center;
+	}
+
+/* 积分兑换 */
+	.content div{
+		width:70%;
+		border:1px #dcdcdc solid;
+		padding:15px;
+		margin:10px auto;
+		border-radius: 20px;
+	}
+	.content img{
+		width:100%;
+	}
+	.text div{
+		width:40%;
+		border:1px #0412CA solid;
+		padding:2px 7px;
+		margin:5px auto;
+		border-radius: 15px;
+		color:#0412CA;
+		font-size:14px;
+	}

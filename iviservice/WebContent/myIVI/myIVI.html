@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>我的IVI</title>
+    <link rel="stylesheet" href="../css/common_ori.css">
+    <link rel="stylesheet" href="../css/load.css">
+    <link rel="stylesheet" href="../css/common1.css">
+    <link rel="stylesheet" href="../css/myIVI/qiandao.css">
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/myIVI/qiandao.js"></script> 
+    <script type="text/javascript">
+   		 $(function(){
+             common.run();  /* 导航圆球的加载效果 */             
+             qiandao.run();
+             $.getJSON("http://123.57.60.214/tyj_weixin_dingyuehao/api/my_ivi",function(data){
+             	if(data.statusCode==-1)	{
+             		if(data.valid==1){ //针对购买设备的 用户 0表示过期，1表示有效  100表示解析异常
+	            	 	$("#fen").html(data.data.points); /* //积分 */
+						$("#validity").html(data.data.validity); /* //产品有效期 */
+						$("#deviceId").html(data.data.deviceId); /* //设备编号 */
+						$("#jifen").html(data.data.memberKind); /* //会员类型 */	
+						if(data.data.isSignIn==0){	
+							$("#qd_but").html("立即签到"); 
+							
+						}else if(data.data.isSignIn==1){	            	
+							$(".qd_disc").css({
+									background : "#0014C8"
+								});
+							$("#qd_but").css({
+									color : "#FFF"
+								});				
+							$("#qd_but").html("今日已签到");
+		
+		 				}else if(data.data.isSignIn==-1){	            
+							$("#qd_but").html("先注册喔"); 
+						}      		        			
+             		}else if(data.valid==0){
+             			var flag=confirm("您的保险已到期，请续保费后激活设备");
+             			if(flag)
+             				window.location.href="install_device_pay_finish.html"
+             			else
+             				return;
+             		}
+             	}else{
+             		alert("网络出错啦");
+             	}	
+	       });          
+     		 $(this).next().siblings(".sfq_tit").slideUp("slow");
+        }); 
+   		  		
+   		function wait() {
+   			var time = document.getElementsByName("time");
+   			for (var i = 0; i < time.length; i++) {
+   				if (time[i].checked == true) {
+   					document.getElementById("vd").style.display = "none";
+   					alert("请等待1分钟查看是否设置成功");
+   					return true;
+   				}
+   			}
+   			alert('时间设置不能为空!');
+   			return false;
+   		}   		
+   				
+   		function downToggle(){
+   			$(".sfq_con2").slideToggle("slow");
+   		} 
+   	  
+		function signUp(){
+		 	$.getJSON("http://123.57.60.214/tyj_weixin_dingyuehao/api/sign_up",function(data){
+				 if(data.statusCode==-1){
+					 $('#adscore').css({'color':"#f00"});
+		             $("#adscore").animate({'font-size':'25px'},"slow");
+		             $("#adscore").animate({'font-size':'0px'},"slow");
+		             $("#pointsIncrease").html(data.data.pointsIncrease );
+		             $("#fen").html(data.data.points );
+		             $("#qd_but").html(data.data.content );	
+		             $(".qd_disc").css({
+							background : "#0014C8"
+						});
+					 $("#qd_but").css({
+							color : "#FFF"
+						});								
+				 }else{
+					 return;
+				 }
+			 });   			
+ 		}
+    </script>  
+</head>
+<body>
+<div class="main">
+    <div class="header ">
+        <div class="nav " style="font-size: 11px;"><a href="../driver/driver.html">中国好司机</a></div>
+        <div class="nav on" style="font-size: 11px;"><a href="myIVI.html">我的IVI</a></div>
+        <div class="nav" style="font-size: 11px;"><a href="../IVIclass/IVIclass.html">IVI课堂</a></div>
+        <div class="logo"></div>
+    </div>
+    <div class="page ">
+        <div class="plate f0">
+             <div id="before_qiaaan" class="qiandao fl ">
+                <div class="qd_disc"></div>
+                <b id="qd_but" class="f2" onclick="signUp()"></b>  
+         <!--        <b id="qd_but" class="f2" ></b>  --> 
+                <h3>您的产品有效期为<span id="validity"> </span> 天</h3>
+			 </div>
+             <div class="fl"  >
+                <div  id="adscore" style="color: #fff;font-size: 10px; font-weight: 600;">
+                   <span id="pointsIncrease">0</span>  
+                </div>
+            
+             </div>
+            <div class="user_acc fr font-col2">
+                <div class="jf_disc "  style="cursor:pointer;"  onclick=" window.location='score.html';"><b>积分</b><em id="fen"></em></div>
+                <div id="jifen" class="vip_disc  font-col2" style="cursor:pointer;" onclick=" window.location='member_infor.html';"></div>
+                <div class="num_disc"><b>设备号</b><em id="deviceId"></em></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="info">
+            <ul>
+                <li class="sfq">
+                    <div class="sfq_tit">优惠活动</div>
+                    <div class="sfq_con1" style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;display:none">    <!--white-space属性设置如何处理元素内的空白，nowrap值规定表格单元格中的内容不换行。text-overflow: ellipsis 超出一行添加省略号  -->
+                      <a href=""> 
+                                                                       签到赚积分，可获得精美礼品哦
+                      </a>
+                    </div>
+                </li>
+                <li class="sfq"  style="overflow: auto;white-space: nowrap;">
+                    <a href="integral_rule.html">积分规则</a>                           <!-- 同一个目录下的网页，不用加路径  -->
+                </li>
+                <li class="sfq"  style="overflow: auto;white-space: nowrap;">
+                    <a href="install_place.html">设备安装点</a>
+                </li>
+                <li>
+                    <div class="sfq_tit" onclick="downToggle()">VD关闭时间设置</div>
+                    <div id="vd" class="sfq_con2" style="overflow: auto;white-space: nowrap; margin-right: 12px;display:none">
+                      	<form id="form_vd" >
+                          <input type="radio"  name="time" value="0" style="vertical-align:middle;font-size:13px" /> 0小时
+                          <input type="radio" name="time" value="1" style="vertical-align:middle;font-size:12px"/> 1小时                      
+                          <input type="radio" name="time" value="2" style="vertical-align:middle;font-size:12px"/> 2小时
+                          <input type="radio" name="time" value="3" style="vertical-align:middle;font-size:12px"/> 3小时
+                          <input type="radio" name="time" value="4" style="vertical-align:middle;font-size:12px"/> 4小时
+                          <input type="radio" name="time" value="5" style="vertical-align:middle;font-size:12px"/> 5小时                       
+ 						</form>
+ 						<center><input type="button" value="&nbsp;确&nbsp;&nbsp;认&nbsp;" class="fr" onclick="wait();"></center>						  				  
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

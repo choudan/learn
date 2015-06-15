@@ -1,0 +1,116 @@
+@charset "utf-8";
+*{
+    margin: 0px;
+    padding: 0px;
+    color: #001400;
+    text-decoration: none;
+}
+a{
+	text-decoration: none;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    font-family: "幼圆";    
+    font-size: 62.5%; 
+    overflow-x:hidden
+}
+.header{
+	width: 100%;
+	height: 40px;
+	line-height:45px;
+	background-color: #0412CA;
+	text-align: center;
+	color: #fff;
+	font-weight: 600;
+	
+}
+.main{
+    padding: 8px 12px;
+ 
+}
+/*布局*/
+.posit-ab{
+	position: absolute;
+	top:12px;
+}
+/*边距*/
+.mar{
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+.mar-bottom{
+	margin-bottom: 8px;
+}
+.
+/*浮动*/
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clear{
+    clear: both;
+}
+/*文字对齐*/
+.text-l{
+	text-align: left;
+}
+.text-r{
+	text-align: right;
+}
+.text-c{
+	text-align: center;
+}
+
+/*字体大小*/
+.f1{
+	font-size: 16px;
+}
+.f2{
+	font-size: 18px;
+}
+.f3{
+	font-size: 20px;
+}
+.f4{
+  font-size: 14px;	
+}
+.f5{
+	font-size: 25px;	
+}
+/*字体加粗*/
+.bl{
+	font-weight: 800;
+}
+/*背景颜色*/
+.back-col1{
+	background-color: #dcdcdc;  /*灰色背景*/
+}
+.back-col2{
+	background-color: #c00; 
+}
+/*字体颜色*/
+.font-col1{
+	color: #001400;  /*浅黑色*/
+}
+.font-col2{
+	color: #fff;  /*白色*/
+}
+.font-col3{
+	color:#f00;  /*红色*/
+}
+.font-col4{
+	color:#f78a04;  /*橙色*/
+}
+.font-col5{
+	color:#0412CA;  /*蓝色*/
+	
+}
+/*鼠标形状*/
+.point
+{
+cursor: pointer;
+
+}

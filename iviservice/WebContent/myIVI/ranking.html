@@ -1,0 +1,148 @@
+<!DOCTYPE html >
+<html lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"content="width=device-width, initial-scale=1" />
+<title>积分排名</title>
+
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/common1.css">
+<link rel="stylesheet" href="../css/myIVI/score.css">
+<script type="text/javascript" src="../js/jquery.js" ></script>
+<style type="text/css"  ></style>
+<script>
+$(function(){
+	  $.getJSON("http://123.57.60.214/tyj_weixin_dingyuehao/api/user_rank",function(data){
+   	     var rankList = data.data;
+   	  	$("#01").html(rankList[0].name);	
+	    $("#02").html(rankList[0].score);	
+	    $("#11").html(rankList[1].name);	
+	    $("#12").html(rankList[1].score);	
+	    $("#21").html(rankList[2].name);	
+	    $("#22").html(rankList[2].score);	
+	    $("#31").html(rankList[3].name);	
+	    $("#32").html(rankList[3].score);	
+	    $("#41").html(rankList[4].name);	
+	    $("#42").html(rankList[4].score);	
+	    $("#51").html(rankList[5].name);	
+	    $("#52").html(rankList[5].score);	
+	    $("#61").html(rankList[6].name);	
+	    $("#62").html(rankList[6].score);	
+	    $("#71").html(rankList[7].name);	
+	    $("#72").html(rankList[7].score);	
+	    $("#81").html(rankList[8].name);	
+	    $("#82").html(rankList[8].score);	
+	    $("#91").html(rankList[9].name);	
+	    $("#92").html(rankList[9].score);	
+	  }) 
+})
+   	     
+   	     
+/*    	     if (data.length==5){
+   	    	for(var i = 0; i < data.length; i++){
+   	      	 var length = $("#ranking tr").length;    //获取表格的行数
+   	      	 var Tb = $("#ranking");                  //获取表格
+   	      	 var clone = $("#ranking #tr0").clone(true);   //创建第一行副本
+   	      	 clone.attr("id","tr" + (i+1));   //为该行添加id	        	
+   	      	 clone.find("td").eq(0).html(data[i].rank);  //为该列附日期
+   	      	 clone.find("td").eq(1).html(data[i].name);  //为该列附类型
+   	      	 clone.find("td").eq(2).html(data[i].score);  //为该列附分值
+   	      	 clone.appendTo(Tb);                    //添加到表格上
+     	    }
+   	     } else {
+   	    	for(var i = 0; i < 5; i++){
+	   	      	 var length = $("#ranking tr").length;    //获取表格的行数
+	   	      	 var Tb = $("#ranking");                  //获取表格
+	   	      	 var clone = $("#ranking #tr0").clone(true);   //创建第一行副本
+	   	      	 clone.attr("id","tr" + (i+1));   //为该行添加id	        	
+	   	      	 clone.find("td").eq(0).html(data[i].rank);  //为该列附日期
+	   	      	 clone.find("td").eq(1).html(data[i].name);  //为该列附类型
+	   	      	 clone.find("td").eq(2).html(data[i].score);  //为该列附分值
+	   	      	 clone.appendTo(Tb);                    //添加到表格上
+     	    } 
+   	    	 var clone = $("#ranking #tr4").clone(true);
+   	    	 clone.attr("id","tr" + "5");   //为该行添加id	        	
+  	      	 clone.find("td").eq(0).html("...");  //为该列附日期
+  	      	 clone.find("td").eq(1).html("...");  //为该列附类型
+  	      	 clone.find("td").eq(2).html("...");  //为该列附分值
+  	      	 clone.appendTo(Tb);                    //添加到表格上
+  	      	 var clone6 = $("#ranking #tr5").clone(true);
+  	      	 clone6.attr("id","tr" + "6");   //为该行添加id	        	
+ 	      	 clone6.find("td").eq(0).html(data[5].rank);  //为该列附日期
+ 	      	 clone6.find("td").eq(1).html(data[5].name);  //为该列附类型
+ 	      	 clone6.find("td").eq(2).html(data[5].score);  //为该列附分值
+ 	      	 clone6.appendTo(Tb);
+   	     } 
+   	     
+   	  $("#ranking").find("tr").eq(0).css({"font-size":"115%"});
+      $("#ranking").find("tr").eq(1).find("td").css({"color":"#D94600","font-size":"115%"});
+      $("#ranking").find("tr").eq(2).find("td").css({"color":"#D94600","font-size":"110%"});
+      $("#ranking").find("tr").eq(3).find("td").css({"color":"#D94600","font-size":"105%"});				
+     });    
+})   */
+
+      
+</script>
+</head>
+<body>  
+<div class="main">
+   <table id="ranking" class=" f4 score" style="border-collapse: collapse;width: 100%;margin-top: 0px;margin-bottom: 2px;">
+     <tr id="tr0" style="height:40px">
+       <td style="width: 20%;font-size:14px">名次</td>
+       <td style="width: 40%;font-size:14px" >姓名</td>
+       <td  style="width: 40%;font-size:14px">积分</td>
+     </tr>       
+     <tr id="tr1" style="height:40px">
+       <td style="width: 20%;font-size:14px" id="00">1</td>
+       <td style="width: 40%;font-size:14px" id="01" ></td>
+       <td  style="width: 40%;font-size:14px" id="02"></td>
+     </tr>       
+     <tr id="tr2" style="height:40px">
+       <td style="width: 20%;font-size:14px" id="10">2</td>
+       <td style="width: 40%;font-size:14px" id="11" ></td>
+       <td  style="width: 40%;font-size:14px" id="12"></td>
+     </tr>       
+     <tr id="tr3" style="height:40px">
+       <td style="width: 20%;font-size:14px" id="20">3</td>
+       <td style="width: 40%;font-size:14px" id="21" ></td>
+       <td  style="width: 40%;font-size:14px" id="22"></td>
+     </tr>       
+     <tr id="tr4" style="height:40px">
+      <td style="width: 20%;font-size:14px" id="30">4</td>
+       <td style="width: 40%;font-size:14px" id="31" ></td>
+       <td  style="width: 40%;font-size:14px" id="32"></td>
+     </tr>       
+     <tr id="tr5" style="height:40px">
+       <td style="width: 20%;font-size:14px" id="40">5</td>
+       <td style="width: 40%;font-size:14px" id="41" ></td>
+       <td  style="width: 40%;font-size:14px" id="42"></td>
+     </tr>       
+     <tr id="tr6" style="height:40px">
+       <td style="width: 20%;font-size:14px" id="50">6</td>
+       <td style="width: 40%;font-size:14px" id="51" ></td>
+       <td  style="width: 40%;font-size:14px" id="52"></td>
+     </tr>       
+     <tr id="tr7" style="height:40px">
+       <td style="width: 20%;font-size:14px" id="60">7</td>
+       <td style="width: 40%;font-size:14px" id="61" ></td>
+       <td  style="width: 40%;font-size:14px" id="62"></td>
+     </tr>       
+     <tr id="tr8" style="height:40px">
+       <td style="width: 20%;font-size:14px" id="70">8</td>
+       <td style="width: 40%;font-size:14px" id="71" ></td>
+       <td  style="width: 40%;font-size:14px" id="72"></td>
+     </tr>       
+     <tr id="tr9" style="height:40px">
+       <td style="width: 20%;font-size:14px" id="80">9</td>
+       <td style="width: 40%;font-size:14px" id="81" ></td>
+       <td  style="width: 40%;font-size:14px" id="82"></td>
+     </tr>       
+     <tr id="tr10" style="height:40px">
+       <td style="width: 20%;font-size:14px" id="90">10</td>
+       <td style="width: 40%;font-size:14px" id="91" ></td>
+       <td  style="width: 40%;font-size:14px" id="92"></td>
+     </tr>       
+   </table> 
+</div> 
+</body>
+</html>

@@ -1,0 +1,98 @@
+.disc_bl{
+    margin: 12px auto;
+    font-size: 72px;
+    color: #FFF;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    background: #0014c8;
+}
+.sm_disc{
+    padding-top: 12px;
+}
+.sm_disc .ms_disc{
+    position: relative;
+}
+.sm_disc h3{
+    text-align: center;
+    line-height: 40px;
+}
+.sm_disc div b{
+    position: absolute;
+    top:0px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+}
+.sm_disc .disc_df,.sm_disc .disc_xh{
+    margin:0 auto;
+    border:1px dashed #0014c8;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 120px;
+    -webkit-transition-property:'transform';
+    -webkit-transition-duration:2s;
+    -webkit-transition-delay:0;
+}
+.warn{
+    padding: 12px 0;
+    border-top:1px solid #CCC;
+    text-align: center;
+}
+.warn .warn_item{
+    width:18%;
+    display: inline-block;
+    padding-top: 13%;
+}
+
+.warn .warn_item b{
+	margin-top:10px;
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+}
+.warn .ico_xs{
+    background: url(../images/xs.png) top center no-repeat;
+    background-size: 80% ;
+}
+.warn .ico_pl{
+    background: url(../images/pl.png) top center no-repeat;
+    background-size: 80%;
+}
+.warn .ico_cspz{
+    background: url(../images/cspz.png) top center no-repeat;
+    background-size: 80%;
+}
+.warn .ico_xrpz{
+    background: url(../images/xrpz.png) top center no-repeat;
+    background-size: 80%;
+}
+.warn .ico_clpz{
+    background: url(../images/clpz.png) top center no-repeat;
+    background-size: 80%;
+}
+
+/* .warn .ico_yg{
+    background: url(../images/ico_yg.png) top center no-repeat;
+    background-size: 80%;
+} */
+.notice{
+    padding: 5px 0;
+    border-top:1px solid #CCC;
+}
+.notice .wz_notice{
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 36px;
+}
+.notice .tool li{
+    padding-left: 15px;
+    list-style-type: none;
+    background: url(../images/li_bg.png) left no-repeat;
+    font-size: 14px;
+    line-height:14px; 
+}

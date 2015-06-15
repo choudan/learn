@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh">
+<head>     <!--JS中单引号和双引号可以混用，本身为弱语言，若外层有双引号，内层需用单引号，语法为双单  -->
+<meta name="viewport"content="width=device-width, initial-scale=1" charset="UTF-8"/>
+<title>近期驾驶习惯趋势图</title>
+<link rel="stylesheet" href="../bootstrapcss/bootstrap.min.css">
+<link rel="stylesheet" href="../bootstrapcss/buttons.css">
+<link rel="stylesheet" href="../bootstrapcss/main.css">
+<link rel="stylesheet" href="../bootstrapcss/prettify.css">
+<link rel="stylesheet" href="../css/common1.css">
+<link rel="stylesheet" href="../css/driver/chart.css">
+<script type="text/javascript" src="../js/jquery.js" ></script>
+<script type="text/javascript" src="../bootstrapjs/chart.js"></script>
+<!-- <script type="text/javascript" src="../js/driver/chart.js" ></script> -->
+<script type="text/javascript">
+$(function() {
+	//动态获取图表下方的数据
+	$.getJSON("http://123.57.60.214/tyj_weixin_dingyuehao/api/driving_habits_today",
+		function(data) {
+			if(data.statusCode==1){
+				$("#day_alarms").html("");
+				$("#total_time").html("");
+				$("#total_length").html("");
+				$("#average_alarm_hour").html("");
+				$("#average_alarm_kilometer").html("");
+				$("#seriousAlarmRate").html("");
+				$("#seriousAlarms").html("");					
+			}else{
+				$("#day_alarms").html(data.data.dayAlarms);
+				$("#total_time").html(data.data.totalTime);
+				$("#total_length").html(data.data.totalLength);
+				$("#average_alarm_hour").html(data.data.averageAlarmHour);
+				$("#average_alarm_kilometer").html(data.data.averageAlarmKilometer);
+				$("#seriousAlarmRate").html(data.data.seriousAlarmRate);
+				$("#seriousAlarms").html(data.data.seriousAlarms);					
+			}
+	});
+	/* 初始化按钮颜色  */
+	var btns = document.getElementById("btn-group");
+	var btn = btns.getElementsByTagName('span');
+	for (var i = 1; i < btn.length; i++) {
+		btn[i].style.backgroundColor = "#dcdcdc";
+		btn[i].style.color = "#9b9696";
+	}
+
+	/* 初始化，显示3天以内的曲线   */
+	btn[0].style.backgroundColor = "#cc0000";
+	btn[0].style.color = "#fff";
+	window.onload = function(){
+		draw(0);
+	}  	   
+});
+
+function color(e) {
+	var btns = document.getElementById("btn-group");
+	var btn = btns.getElementsByTagName('span');
+	for (var i = 0; i < btn.length; i++) {
+		btn[i].style.backgroundColor = "#dcdcdc";
+		btn[i].style.color = "#9b9696";
+	}
+	e.style.backgroundColor = '#cc0000';
+	e.style.color = "#fff";
+}
+
+function draw(index){
+	var labels1 = new Array();
+	var keypoint1 = new Array();
+	var keypoint2 = new Array();
+	var ctx = document.getElementById("canvas").getContext("2d");
+	$.ajax({
+		type : "get",
+		dataType : "json",
+		url : "http://123.57.60.214/tyj_weixin_dingyuehao/api/driving_trend",
+		// 将对象转换成字符串，并传递给后台
+		data : {
+			"interval" : index
+		},
+		success : function(data) {
+			if(data.statusCode==-1){
+				labels1=data.data.labels1;
+				keypoint2=data.data.keypoint2;
+				keypoint1=data.data.keypoint1;
+				var lineChartData=paint(labels1,keypoint1,keypoint2);
+				window.myLine = new Chart(ctx).Line(lineChartData, {
+					responsive: true
+				}); 	  				
+			}else if(data.statusCode==1){
+				alert("暂时没有数据");
+			}else if(data.statusCode==4){
+				alert("请求参数错误");
+			}else if(data.statusCode==3){
+				alert("非VIP会员，暂无数据");				
+			}				
+		},
+		error : function() {
+			alert("请求失败");
+		}
+	})
+}
+
+function paint(labels,data1,data2){
+	var lineChartData = {
+	 		labels : labels, 
+			datasets : [
+				{
+/* 					label: "My First dataset",
+ */					fillColor : "rgba(220,220,220,0.2)",
+					strokeColor :  "#f00",
+					pointColor : "rgba(220,220,220,1)",
+					pointStrokeColor : "#f00",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(220,220,220,1)", 
+					data : data1, 
+				},
+				{
+/* 					label: "My Second dataset",
+ */					fillColor : "rgba(151,187,205,0.2)",
+					strokeColor : "#f78a04",
+					pointColor : "rgba(151,187,205,1)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(151,187,205,1)", 
+					data : data2,
+				}
+			]		
+		}
+	return lineChartData;
+}
+</script>
+</head>
+<body>
+	<div class="main">
+		<div>		
+			<span class="f0 font-col3 text-l">红色折线:严重告警 </span>
+		</div>
+		<div>
+			<span class="f0 font-col4 text-r">橙色折线:告警总数</span>		
+		</div>
+		
+		<div style="width:100%;height:30%">
+			<canvas id="canvas" height="30%" width="100%"></canvas>
+		</div>		
+		
+		<div style="width:100%; font-size:14px" id="btn-group">
+			<span
+				class="button button-rounded button-flat-caution mar back-col1 font-col1 "
+				onclick="color(this);draw(0);">3天以内</span> 
+			<span
+				class="button button-rounded button-flat-caution mar back-col1 font-col1 "
+				onclick="color(this);draw(1);">7天以内</span> 
+			<span
+				class="button button-rounded button-flat-caution mar back-col1 font-col1"
+				onclick="color(this);draw(2);">一个月内</span> 
+			<span
+				class="button button-rounded button-flat-caution mar back-col1 font-col1"
+				onclick="color(this);draw(3);">六个月内</span>
+		</div>
+	
+		<table class=" f0">
+			<tr>
+				<td class="text-l td">今日告警总次数：</td>
+				<td class="text-r "><span id="day_alarms"></span><span>次</span></td>
+			</tr>
+			<tr>
+				<td class="text-l td">行驶总时长：</td>
+				<td class="text-r "><span id="total_time"></span><span>h</span></td>
+			</tr>
+			<tr>
+				<td class="text-l td">行驶总里程：</td>
+				<td class="text-r "><span id="total_length"></span><span>km</span></td>
+			</tr>
+			<tr>
+				<td class="text-l td">平均每小时告警次数：</td>
+				<td class="text-r "><span id="average_alarm_hour"></span><span>次</span></td>
+			</tr>
+			<tr>
+				<td class="text-l td">平均每公里告警次数：</td>
+				<td class="text-r "><span id="average_alarm_kilometer"></span><span>次</span></td>
+			</tr>
+			<tr>
+				<td class="text-l td">严重告警次数：</td>
+				<td class="text-r "><span id="seriousAlarms"></span><span>次</span></td>
+			</tr>
+			<tr>
+				<td class="text-l td">严重告警率：</td>
+				<td class="text-r "><span id="seriousAlarmRate"></span></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
