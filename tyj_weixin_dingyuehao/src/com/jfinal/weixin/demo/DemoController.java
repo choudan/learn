@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.jfinal.aop.Before;
+import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.weixin.sdk.jfinal.WeixinController;
 import com.jfinal.weixin.sdk.jfinal.WeixinInterceptor;
 import com.jfinal.weixin.sdk.msg.in.InImageMsg;
@@ -190,8 +191,7 @@ public class DemoController extends WeixinController {
 		String subscribe=inFollowEvent.getEvent();
 		System.out.println("LLLLLLLLLLLLLLLLLLLLLLLLLL  subscribe:"+subscribe);
 		if (subscribe.equals("subscribe")) {
-			Device_user_Model device = Device_user_Model.dao
-					.findFirst("select * from device_user where wechat_openid='"
+			Device_user_Model device = Device_user_Model.dao.findFirst("select * from device_user where wechat_openid='"
 							+ open_id + "'");
 			System.out.println("LLLLLLLLLLLLLLLLLLLLLLLLLL  device:" + device);
 			if (device == null) {
@@ -202,34 +202,72 @@ public class DemoController extends WeixinController {
 						.set("driver_license_type", null).set("age", null)
 						.set("userImgs", UrlHelper.BACK_DIR+"/head_img/p1.png").set("check_pay", 0).save();// 关注后，即在数据库生成信息
 				System.out.println("LLLLLLLLLLLLLLLLLLLLLLLLLL  confirm:"+ confirm);
-			}
+			}	
+			OutNewsMsg outMsg = new OutNewsMsg(inFollowEvent);
+			News at = new News();
+			at.setDescription("点击查看快速设置指南");
+			at.setPicUrl(UrlHelper.BACK_DIR+"/img/1.jpg");
+			at.setTitle("IVI课堂");
+			at.setUrl(UrlHelper.FRONT_DIR+"/Intro.html");
+			News at1 = new News();
+			at1.setDescription("点击查看快速设置指南1");
+			at1.setPicUrl(UrlHelper.BACK_DIR+"/img/2.jpg");
+			at1.setTitle("IVI课堂");
+			at1.setUrl(UrlHelper.FRONT_DIR+"/Intro.html");
+			
+			News at2 = new News();
+			at2.setDescription("点击查看快速设置指南3");
+			at2.setPicUrl(UrlHelper.BACK_DIR+"/img/video.png");
+			at2.setTitle("中国好司机");
+			at2.setUrl(UrlHelper.FRONT_DIR+"/IVI.mp4");
+	
+			List<News> aS = new ArrayList<News>();
+			aS.add(at2);
+			aS.add(at1);
+			aS.add(at);
+			outMsg.addNews(aS);
+			render(outMsg);			
+		}else{
+			Device_user_Model model=Device_user_Model.dao.findFirst("select * from device_user where wechat_openid='"+open_id+"'");
+			Integer user_id=model.getInt("id");
+			Integer device_id=model.getInt("device_id");
+			Db.update("delete from apply_install_infos where user_id='"+user_id+"'");
+			Db.update("delete from device_gps_infos where device_id='"+device_id+"'");
+			Db.update("delete from device_gps_dayinfos where device_id='"+device_id+"'");
+			Db.update("delete from device_gps_dayinfos where device_id='"+device_id+"'");
+			Db.update("delete from sign_up where user_id='"+user_id+"'");
+			Db.update("delete from points where user_id='"+user_id+"'");
+			Db.update("delete from apply_install_infos where user_id='"+user_id+"'");
+			Db.update("delete from device_user where wechat_openid='"+open_id+"'");
+			Db.update("delete from apply_user_infos where wechat_openid='"+open_id+"'");				
 		}
-				
-		OutNewsMsg outMsg = new OutNewsMsg(inFollowEvent);
-		News at = new News();
-		at.setDescription("点击查看快速设置指南");
-		at.setPicUrl(UrlHelper.BACK_DIR+"/img/1.jpg");
-		at.setTitle("IVI课堂");
-		at.setUrl(UrlHelper.FRONT_DIR+"/Intro.html");
-		News at1 = new News();
-		at1.setDescription("点击查看快速设置指南1");
-		at1.setPicUrl(UrlHelper.BACK_DIR+"/img/2.jpg");
-		at1.setTitle("IVI课堂");
-		at1.setUrl(UrlHelper.FRONT_DIR+"/Intro.html");
-		
-		News at2 = new News();
-		at2.setDescription("点击查看快速设置指南3");
-		at2.setPicUrl(UrlHelper.BACK_DIR+"/img/video.png");
-		at2.setTitle("中国好司机");
-		at2.setUrl(UrlHelper.FRONT_DIR+"/IVI.mp4");
-
-		List<News> aS = new ArrayList<News>();
-		aS.add(at2);
-		aS.add(at1);
-		aS.add(at);
-		outMsg.addNews(aS);
-		render(outMsg);	
 	}
+				
+//		OutNewsMsg outMsg = new OutNewsMsg(inFollowEvent);
+//		News at = new News();
+//		at.setDescription("点击查看快速设置指南");
+//		at.setPicUrl(UrlHelper.BACK_DIR+"/img/1.jpg");
+//		at.setTitle("IVI课堂");
+//		at.setUrl(UrlHelper.FRONT_DIR+"/Intro.html");
+//		News at1 = new News();
+//		at1.setDescription("点击查看快速设置指南1");
+//		at1.setPicUrl(UrlHelper.BACK_DIR+"/img/2.jpg");
+//		at1.setTitle("IVI课堂");
+//		at1.setUrl(UrlHelper.FRONT_DIR+"/Intro.html");
+//		
+//		News at2 = new News();
+//		at2.setDescription("点击查看快速设置指南3");
+//		at2.setPicUrl(UrlHelper.BACK_DIR+"/img/video.png");
+//		at2.setTitle("中国好司机");
+//		at2.setUrl(UrlHelper.FRONT_DIR+"/IVI.mp4");
+//
+//		List<News> aS = new ArrayList<News>();
+//		aS.add(at2);
+//		aS.add(at1);
+//		aS.add(at);
+//		outMsg.addNews(aS);
+//		render(outMsg);	
+//	}
 
 	/**
 	 * 实现父类抽方法，处理扫描带参数二维码事件

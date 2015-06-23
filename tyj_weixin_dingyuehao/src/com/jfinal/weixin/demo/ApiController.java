@@ -33,26 +33,10 @@ import com.tyj.wechat.app.service.StatisticsService;
 import com.tyj.wechat.app.service.UserDataService;
 
 public class ApiController extends Controller {
-	public static String open_id="";//static变量，全局唯一一份，所有访问者得到的均是同一份资源。用session来代替，面对每一个访问者，每次给open_id重新赋值。
+//	public static String open_id="";//static变量，全局唯一一份，所有访问者得到的均是同一份资源。用session来代替，面对每一个访问者，每次给open_id重新赋值。
     public String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());//统一时间格式
 	
-    /*//获取公众号菜单 
-	public void getMenu() {
-		ApiResult apiResult = MenuApi.getMenu();
-		if (apiResult.isSucceed()){
-			renderText(apiResult.getJson());	
-			System.out.println("LLLLLLLLLLLLLLLLLLLLLLLLLLL getMenu  apiResult:"+apiResult);
-		}else{
-			renderText(apiResult.getErrorMsg());		
-		}
-	}
-	
-	//获取公众号关注用户	 
-	public void getFollowers() {
-		ApiResult apiResult = UserApi.getFollows();
-		renderText(apiResult.getJson());
-	}
-
+    /*
 	//创建菜单, 将菜单按钮的链接设置为用户信息授权链接,跳转到的{REDIRECT_URI}可以获取到用户openid了，调用一次即可。
 	public void createmenu(){
 		MenuApi a=new MenuApi();
@@ -81,12 +65,13 @@ public class ApiController extends Controller {
 	  
     public String oAuth(){
     	String op_id="";
-		System.out.println("++++++++++++++++++++++++++++++++++++开始");
+		System.out.println("++++++++++++++++++++++++++++++++++++ 执行 oAuth");
 		if(getSessionAttr("openid")==null){
 			String code = getPara("code");
 			System.out.println("++++++++++++++++++++++++++++++++++++"+code);
 			String j = new OAuth2().oAuth2(code);
 			System.out.println("++++++++++++++++++++++++++++++++++++"+ j);
+			System.out.println("++++++++++++++++++++++++++++++++++++ 开始认证oAuth");
 			JSONObject Oth = JSON.parseObject(j);
 			System.out.println("++++++++++++++++++++++++++++++++++++"+ Oth);
 			op_id = (String) Oth.get("openid");	
@@ -100,20 +85,19 @@ public class ApiController extends Controller {
 		
 	//中国好司机	
 	public void get_openid() {
-//		redirect("http://182.92.224.124/iviservice/view/1.jsp");//1.jsp的作用：创建session，保存openid.30分钟以内，用户再次访问，就不用重新outh2认证。（其实，不必如此，网页授权获取用户信息（open_id）的接口无调用次数限制，可一直刷新获得code(存活5分钟)、认证、access_token、open_id，弊端：加载太慢,有时间认证可能不成功）
-		redirect(UrlHelper.FRONT_DIR+"/view/1.jsp");//1.jsp的作用：创建session，保存openid.30分钟以内，用户再次访问，就不用重新outh2认证。（其实，不必如此，网页授权获取用户信息（open_id）的接口无调用次数限制，可一直刷新获得code(存活5分钟)、认证、access_token、open_id，不过这样做的弊端：加载太慢,有时间认证可能不成功）
-		open_id=oAuth();
+		String open_id=oAuth();
+//		redirect(UrlHelper.FRONT_DIR+"/view/1.jsp?openid="+open_id);//1.jsp的作用：创建session，保存openid.30分钟以内，用户再次访问，就不用重新outh2认证。（其实，不必如此，网页授权获取用户信息（open_id）的接口无调用次数限制，可一直刷新获得code(存活5分钟)、认证、access_token、open_id，不过这样做的弊端：加载太慢,有时间认证可能不成功）
+		redirect(UrlHelper.FRONT_DIR+"/driver/driver.html");//1.jsp的作用：创建session，保存openid.30分钟以内，用户再次访问，就不用重新outh2认证。（其实，不必如此，网页授权获取用户信息（open_id）的接口无调用次数限制，可一直刷新获得code(存活5分钟)、认证、access_token、open_id，不过这样做的弊端：加载太慢,有时间认证可能不成功）
 		System.out.println(">>>>>>>>>>>>>>>>>>>>get_openid()执行完毕<<<<<<<<<<<<<<<<<<<<<<  open_id:"+open_id);
 	}	
-	
+		
 	//用户注册
 	public void install_openid(){
-		open_id=oAuth();	
+		String open_id=oAuth();	
 		System.out.println("+_+_+_+_+_+_+  open_id:"+open_id);
 		switch(check_regist()){
 		case 0:
 			redirect(UrlHelper.FRONT_DIR+"/myIVI/register.html");
-//			redirect("http://182.92.224.124/iviservice/myIVI/register.html");
 			System.out.println(">>>>>>>>>>>>>>>>>>>++++++++++++用户注册菜单测试：游客");
 			break;
 		case 1:
@@ -131,7 +115,7 @@ public class ApiController extends Controller {
 	
 	//安装设备
 	public void comp_openid(){	
-		open_id=oAuth();
+		String open_id=oAuth();
 		System.out.println("+_+_+_+_+_+_+  open_id:"+open_id);
 
 		Device_user_Model qt = Device_user_Model.dao.findFirst("select device_id,car_type,buyYear,car_no,insurance,lastYearCosts,installAddress,check_pay from device_user where wechat_openid='" 
@@ -152,6 +136,7 @@ public class ApiController extends Controller {
 	//vip会员获得安装信息（安装以后，点击  菜单安装设备 后的效果）	
 	public void back_comp(){
 //		String open_id=oAuth();
+		String open_id=getSessionAttr("openid");
 		System.out.println("back_comp中的open_id："+open_id);	
 		Device_user_Model qt = Device_user_Model.dao.findFirst("select device_id,car_type,buyYear,car_no,insurance,lastYearCosts,installAddress from device_user where wechat_openid='" 
 				+ open_id+ "'");			
@@ -166,7 +151,7 @@ public class ApiController extends Controller {
 		
 	/*完善个人信息*/
 	public void complete_info(){
-//		String open_id=oAuth();
+		String open_id=oAuth();
 //		Calendar c = Calendar.getInstance();
 //		int year = c.get(Calendar.YEAR);
 //		int month = c.get(Calendar.MONTH) + 1;
@@ -287,8 +272,9 @@ public class ApiController extends Controller {
 	 
 	//签到查询	 
 	public int if_sign(){	
-		System.out.println("++++++++++++++++++++++++++++++if_sign执行到了：00");
 //		String open_id=oAuth();
+		String open_id=getSessionAttr("openid");
+		System.out.println("++++++++++++++++++++++++++++++if_sign执行到了：00  openid:"+open_id);
 		int isSignIn=-1;
     	int flag=check_regist();
 		if(flag==0){
@@ -313,7 +299,9 @@ public class ApiController extends Controller {
 	
 	//签到 ,计算出相关数值，存到表中;
     public void sign_up(){	
-    	System.out.println("————————————————————签到date:"+date+"  0 ");
+//    	String open_id=oAuth();
+		String open_id=getSessionAttr("openid");
+		System.out.println("————————————————————签到date:"+date+"  0  open_id:"+open_id);
 		Result a = new Result();
 		SignUp sign=new SignUp();
 		System.out.println("————————————————————签到date:"+date+"  1 ");
@@ -399,6 +387,8 @@ public class ApiController extends Controller {
 	public void driving_habits_today() {
 		Result re = new Result();
 //		String open_id=oAuth();
+		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= driving_habits_today : open_id"+open_id);
 		Integer userId = Device_user_Model.dao.findFirst(
 				"select device_id from device_user where wechat_openid='"
 						+ open_id + "'").getInt("device_id");
@@ -420,6 +410,8 @@ public class ApiController extends Controller {
 		Result re = new Result();
 		String para=getPara("interval");
 //		String open_id=oAuth();
+		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= driving_trend : open_id"+open_id);
 		if(para==null){
 			re.setStatusCode(4);//参数错误
 			trend=null;
@@ -469,7 +461,8 @@ public class ApiController extends Controller {
 		Result re = new Result();	
 		//app端的
 //		String open_id=oAuth();
-	    System.out.println("user_data_main openid ="+open_id);
+		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= user_data_main : open_id"+open_id);
 		switch(check_regist()){
 		case 0:
 			UserDataMain traveler=new UserDataMain();	
@@ -512,7 +505,8 @@ public class ApiController extends Controller {
 		UserInfo rs = new UserInfo();
 		Result aq = new Result();
 //		String open_id=oAuth();
-		System.out.println(">>>>>>>>>>>>>>>>>query_user_info中的wechat_openid："+ open_id);
+		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= query_user_info : open_id"+open_id);
 		switch(check_regist()){
 		case 0:
 			aq.setDataType(0);//此处0表示游客身份，前台提醒注册
@@ -593,6 +587,8 @@ public class ApiController extends Controller {
  	
  	/*userId这个是真正的id*/
  	public void update_user_info(){
+ 		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= update_user_info : open_id"+open_id);
 //		String open_id=oAuth();
  		Integer userId=Device_user_Model.dao.findFirst("select * from device_user where wechat_openid='"+open_id+"'").getInt("id");	
  		String	update_user_info =getPara("update_user_info");
@@ -635,6 +631,8 @@ public class ApiController extends Controller {
  	
  	//获取 安装设备 信息,++++++++++++ 没有添加s_points这个字段 （具体作用）	
  	public void installInfo(){
+ 		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= installInfo : open_id"+open_id);
 //		String open_id=oAuth();
  		Result aq = new Result();
  		HashMap<String, Object> map = new HashMap<String, Object>();
@@ -688,6 +686,8 @@ public class ApiController extends Controller {
  	//用户注册,不用再判断了，菜单项已经有过判断。check_pay:0未支付，1支付
  	public void register(){
 //		String open_id=oAuth();
+		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= register : open_id"+open_id);
  		boolean confirm=false,promt=false;
    		Result aq = new Result();
    		HashMap<String, Object> map = new HashMap<String, Object>();
@@ -849,6 +849,8 @@ public class ApiController extends Controller {
  	//获取积分、设备号、是否会员、产品有效期 	（vip签到X10）
  	public void my_ivi(){
 //		String open_id=oAuth();
+		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= my_ivi : open_id"+open_id);
  		int pointsIncrease=0,score=0,vaild=0;
  		String insurance="";
  		int isSignIn=if_sign();//1签到，0未签到，-1表示游客不能签到
@@ -941,6 +943,8 @@ public class ApiController extends Controller {
 	public void linkapp(){
 		String phone=getPara("telephone");
 //		String open_id=oAuth();
+		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= linkapp : open_id"+open_id);
 		Device_user_Model u=Device_user_Model.dao.findFirst("select * from device_user where telephone='"+phone+"'");			 	
 		if (null == u) {
 			Result aq = new Result();
@@ -973,6 +977,8 @@ public class ApiController extends Controller {
 		Result aq = new Result();	
 		String img_url="";
 //		String open_id=oAuth();
+		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= head_img : open_id"+open_id);
 		Device_user_Model head_img=Device_user_Model.dao.findFirst(
 					"select userImgs from device_user where wechat_openid='" + open_id
 					+ "'");
@@ -988,6 +994,9 @@ public class ApiController extends Controller {
 	
 	//更换头像
 	public void changeHeadView(){
+		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= changeHeadView : open_id"+open_id);
+//		String open_id=oAuth();
 		boolean flag=false;
 		Result result=new Result();
 		int para=Integer.parseInt(getPara("headView"));
@@ -1022,6 +1031,8 @@ public class ApiController extends Controller {
 	//我的积分
 	public void points_info(){
 //		String open_id=oAuth();
+		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= points_info : open_id"+open_id);
 		Result aq=new Result();
 		try{
 			Integer userId=Device_user_Model.dao.findFirst("select id from device_user where wechat_openid='"+open_id+"'").getInt("id");	
@@ -1041,7 +1052,8 @@ public class ApiController extends Controller {
 	//积分排名
 	public void user_rank() {
 //		String open_id=oAuth();
-		System.out.println("user_rank openid =" + open_id);
+		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= user_rank : open_id"+open_id);
 		int i=0;
 		Result aq = new Result();
 		List<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
@@ -1096,6 +1108,9 @@ public class ApiController extends Controller {
 					
 	//检验是否注册
 	public int check_regist(){
+		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= check_regist : open_id"+open_id);
+//		String open_id=oAuth();
 		int flag=-1;
 		System.out.println("+++++++——————————————++++++open_id："+open_id);
 		Device_user_Model x = Device_user_Model.dao
@@ -1152,6 +1167,8 @@ public class ApiController extends Controller {
 	
 	//驾驶得分、击败车友比例，data为数组
 	public void drive_points() {
+		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= drive_points : open_id"+open_id);
 //		String open_id=oAuth();
 		StatisticsService ss = new StatisticsService();
 		Result aq = new Result();
@@ -1228,6 +1245,8 @@ public class ApiController extends Controller {
 		
 	//驾驶排名
 	public void drive_rank() {
+		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= drive_rank : open_id"+open_id);
 //		String open_id=oAuth();
 		List<HashMap<String, String>> q = new ArrayList<HashMap<String, String>>();
 		Result aq = new Result();
@@ -1288,8 +1307,9 @@ public class ApiController extends Controller {
 	
 	//更新后台支付状态
 	public void checkPay(){
+		String open_id=getSessionAttr("openid");
+		System.out.println("=-=-=-=-=-=-=-=-=-= checkPay : open_id"+open_id);
 //		String open_id=oAuth();
-		System.out.println("++++++++++++++++++++++++++checkPay中 开始执行" );
 		Result aq = new Result();
 		System.out.println("++++++++++++++++++++++++++checkPay中 openid =" + open_id);
 		Device_user_Model uq = Device_user_Model.dao

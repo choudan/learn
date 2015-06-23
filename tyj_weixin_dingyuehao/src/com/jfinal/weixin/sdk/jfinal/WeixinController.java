@@ -65,6 +65,7 @@ public abstract class WeixinController extends Controller {
 //	           renderOutTextMsg(echostr);
 //	           System.out.println("执行完毕: ");
 //	       }	
+	       
 			
 		}
 			
