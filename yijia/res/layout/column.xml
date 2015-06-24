@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <!-- 习惯 -->
+    <RelativeLayout
+       android:id="@+id/rl_layout"
+       android:layout_width="fill_parent"
+       android:layout_height="80dp"
+       android:layout_alignParentLeft="true"
+       android:layout_alignParentTop="true"
+       android:paddingTop="10dp"
+       android:background="#1293a5"
+       android:gravity="center_vertical" 
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/username"
+            android:text="秦始皇"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+    	<LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_weight="4.5"
+	        android:orientation="horizontal" >
+	    	<LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:layout_weight="0.5"
+		        android:background="@drawable/year" 
+		        android:orientation="horizontal" 
+		        android:layout_gravity="center_vertical"
+	        	>
+	
+		        <TextView
+		            android:id="@+id/year"
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+		            android:gravity="center"
+		            android:textColor="#008b8b"
+		            android:textSize="18sp" 
+		            android:layout_weight="1"
+		            />
+	
+		        <ImageButton
+		            android:id="@+id/edityear"
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+		            android:src="@drawable/arrow"
+		            android:background="#ffffff"			            		            
+		            android:onClick="true" 
+		            android:layout_weight="3"
+		            />
+	   	 </LinearLayout>
+         <TextView
+           android:id="@+id/line"
+           android:layout_width="0.5dp"
+           android:layout_height="fill_parent"
+           android:textColor="#b9b9b9"
+           android:background="@drawable/line"
+           />
+                   
+		<LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:background="@drawable/year"
+	        android:orientation="horizontal" 
+	        android:layout_weight="0.5">
+		
+	        	<TextView
+		            android:id="@+id/month"
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+		            android:gravity="center"			            
+		            android:textSize="18sp"
+		            android:textColor="#008b8b"
+		            android:layout_weight="1"
+		            />
+
+	        	<ImageButton
+		            android:id="@+id/editmonth"
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+		            android:src="@drawable/arrow"
+		            android:background="#ffffff" 
+		            android:layout_weight="3"
+		            />
+	   	 	</LinearLayout> 				 
+	    </LinearLayout>
+        
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"	   
+	    android:orientation="horizontal" 
+	    android:layout_weight="4.7"
+	    >
+
+       <HorizontalScrollView           
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:id="@+id/scrollview"
+             android:scrollbars="none" >        
+              <RadioGroup
+              android:gravity="center"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent" 
+              android:orientation="horizontal"            
+              >
+              <RadioButton
+                  android:id="@+id/Bt1"
+                  android:layout_width="33dp"
+                  android:layout_height="wrap_content"                 
+                  android:text="1"
+                  android:textColor="#008b8b"
+                  android:background="@drawable/set_year" 
+                  android:textSize="18sp" 
+                  android:button="@null"
+                  android:layout_weight="1"
+                  android:gravity="center"
+                  />
+
+                <RadioButton
+                    android:id="@+id/Bt2"
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"                   
+                    android:text="2" 
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year"   
+                    android:textSize="18sp" 
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    />
+
+                <RadioButton
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:id="@+id/Bt3"
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"                  
+                    android:text="3"
+                    android:textColor="#008b8b" 
+                    android:textSize="18sp"
+                    android:background="@drawable/set_year" />
+
+                <RadioButton
+                    android:id="@+id/Bt4"
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"                   
+                    android:text="4" 
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:background="@drawable/set_year" 
+                    android:textColor="#008b8b"/>
+
+                <RadioButton
+                    android:id="@+id/Bt5"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"                 
+                    android:text="5"
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" />
+                
+                <RadioButton
+                    android:id="@+id/Bt6"
+                    android:layout_width="33dp"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_height="wrap_content"                   
+                    android:text="6" 
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" />
+                
+                  <RadioButton
+                    android:id="@+id/Bt7"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"                  
+                    android:text="7" 
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" />
+                  
+                  <RadioButton
+                    android:id="@+id/Bt8"
+                    android:layout_width="33dp"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	                                    	
+                    android:layout_height="wrap_content"                    
+                    android:text="8" 	
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" />
+                   
+                   <RadioButton
+                    android:id="@+id/Bt9"
+                    android:layout_width="33dp"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_height="wrap_content"              
+                    android:text="9" 				                    
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" />
+                    
+                    <RadioButton
+                    android:id="@+id/Bt10"
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"                 
+                    android:text="10" 
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	                                   	
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" />
+                    
+                   <RadioButton
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+	                android:id="@+id/Bt11"
+	                android:layout_width="33dp"
+	                android:layout_height="wrap_content"                 
+	                android:text="11"
+	                android:textColor="#008b8b"
+	                android:background="@drawable/set_year" 
+	                android:textSize="18sp" />
+
+                  <RadioButton
+                    android:id="@+id/Bt12"
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"                   
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:text="12" 
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year"   
+                    android:textSize="18sp" />
+
+                  <RadioButton
+                    android:id="@+id/Bt13"
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"                  
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:text="13"
+                    android:textColor="#008b8b" 
+                    android:textSize="18sp"
+                    android:background="@drawable/set_year" />
+
+                  <RadioButton
+                    android:id="@+id/Bt14"
+                    android:layout_width="33dp"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_height="wrap_content"                   
+                    android:text="14" 
+                    android:textSize="18sp"
+                    android:background="@drawable/set_year" 
+                    android:textColor="#008b8b"/>
+
+                  <RadioButton
+                    android:id="@+id/Bt15"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"                 
+                    android:text="15"
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" />
+                
+                  <RadioButton
+                    android:id="@+id/Bt16"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"                   
+                    android:text="16" 
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" />
+                
+                  <RadioButton
+                    android:id="@+id/Bt17"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"                  
+                    android:text="17" 
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" />
+                  
+                  <RadioButton
+                    android:id="@+id/Bt18"
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"                    
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:text="18" 	
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" />
+                   
+                  <RadioButton
+                    android:id="@+id/Bt19"
+                    android:layout_width="33dp"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_height="wrap_content"              
+                    android:text="19" 				                    
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" />
+                    
+                  <RadioButton
+                    android:id="@+id/Bt20"
+                    android:layout_width="33dp"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	                	
+                    android:layout_height="wrap_content"                 
+                    android:text="20" 
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" />
+                    
+                  <RadioButton
+                    android:id="@+id/Bt21"
+                    android:layout_width="33dp"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_height="wrap_content"                 
+                    android:text="21" 
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" />
+                    
+                  <RadioButton
+                    android:id="@+id/Bt22"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"                 
+                    android:text="22"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" 
+                    android:textSize="18sp" />
+
+                  <RadioButton
+                    android:id="@+id/Bt23"
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"                   
+                    android:text="23" 
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	                	
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year"   
+                    android:textSize="18sp" />
+
+                  <RadioButton
+                    android:id="@+id/Bt24"
+                    android:layout_width="33dp"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_height="wrap_content"                  
+                    android:text="24"
+                    android:textColor="#008b8b" 
+                    android:textSize="18sp"
+                    android:background="@drawable/set_year" />
+
+                  <RadioButton
+                    android:id="@+id/Bt25"
+                    android:layout_width="33dp"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_height="wrap_content"                   
+                    android:text="25" 
+                    android:textSize="18sp"
+                    android:background="@drawable/set_year" 
+                    android:textColor="#008b8b"/>
+
+                  <RadioButton
+                    android:id="@+id/Bt26"
+                    android:layout_width="33dp"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_height="wrap_content"                 
+                    android:text="26"
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" />
+                
+                  <RadioButton
+                    android:id="@+id/Bt27"
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"                   
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:text="27" 
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" />
+                
+                  <RadioButton
+                    android:id="@+id/Bt28"
+                    android:layout_width="33dp"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_height="wrap_content"                  
+                    android:text="28" 
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" />
+                  
+                  <RadioButton
+                    android:id="@+id/Bt29"
+                    android:layout_width="33dp"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_height="wrap_content"                    
+                    android:text="29" 	
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year"
+                    android:visibility="gone" />
+                   
+                   <RadioButton
+                    android:id="@+id/Bt30"
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"              
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:text="30" 				                    
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" 
+                    android:visibility="gone" />
+                    
+                    <RadioButton
+                    android:id="@+id/Bt31"
+                    android:layout_width="33dp"
+                    android:layout_weight="1"
+                  	android:gravity="center"
+                  	android:button="@null"                 	
+                    android:layout_height="wrap_content"                 
+                    android:text="31" 
+                    android:textSize="18sp"
+                    android:textColor="#008b8b"
+                    android:background="@drawable/set_year" 
+                    android:visibility="gone" />                                  
+                 </RadioGroup>                                
+               </HorizontalScrollView>         	
+                  <ImageView
+		           android:id="@+id/line1"
+		           android:layout_width="fill_parent"
+		           android:layout_height="0.5dp"
+		           android:background="#ABABAB"/>
+          </LinearLayout>
+ 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5">          
+            <HorizontalScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:scrollbars="none" >
+                 <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"  >                     	                             
+                   <RelativeLayout
+                    android:id="@+id/pillars"
+                    android:paddingTop="35dp"
+                    android:layout_width="2000dp"
+                    android:layout_height="fill_parent"
+                    android:orientation="horizontal"
+                    >
+                   </RelativeLayout>  
+                </LinearLayout>             
+            </HorizontalScrollView>          
+       </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+         

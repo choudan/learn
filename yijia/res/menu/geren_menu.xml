@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+   <!--   <item android:id="@+id/wancheng"
+          android:background="@drawable/button"
+          android:text="完成" />
+     <item android:id="@+id/zhuxiao"
+          android:background="@drawable/button"
+          android:title="注销" />
+ -->
+</menu>

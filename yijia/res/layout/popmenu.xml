@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_view_cont"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"    
+    android:orientation="vertical" 
+    android:gravity="center"
+    android:background="@drawable/select_year"         
+    >
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="wrap_content"
+        android:layout_height="170dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:divider="#fff"
+        android:dividerHeight="1px"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:scrollbars="none" 
+        />
+  
+</LinearLayout>

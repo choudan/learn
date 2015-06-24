@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >   
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:background="@drawable/bj">
+
+	 <TextView
+	     android:id="@+id/textview"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+	     android:layout_alignParentTop="true"
+	     android:layout_centerHorizontal="true"
+	     android:layout_marginTop="70dp"
+	     android:text="颐佳经络仪测试专用界面"
+	     android:textColor="#ffffff"
+	     android:textSize="18sp" />
+
+	 <EditText
+	     android:id="@+id/edit"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+	     android:layout_centerHorizontal="true"
+	     android:layout_centerVertical="true"
+	     android:background="@drawable/next_btn"
+	     android:singleLine="true"
+		 android:gravity="left"
+	     android:hint="请输入要注册的序列号（“zm”已注册）"/>
+
+	 <Button
+	     android:id="@+id/button1"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+	     android:layout_alignParentBottom="true"
+	     android:layout_centerHorizontal="true"
+	     android:text="确定" />	
+
+  </RelativeLayout>
+</RelativeLayout>

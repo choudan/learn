@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"  >  
+       
+   <RelativeLayout
+        android:id="@+id/rl_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#1293a5"
+        android:gravity="center_vertical" >
+
+       <ImageButton
+         android:id="@+id/btn_back"
+         android:layout_width="50dp"
+         android:layout_height="fill_parent"
+         android:layout_centerVertical="true"
+         android:layout_marginLeft="15dp"
+         android:src="@drawable/back"
+         android:onClick="btn_back"
+         android:background="#1293a5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="注 销"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="经络仪已清空"
+        android:textColor="#636363"
+        android:textSize="20dip" />
+
+     <TextView
+         android:id="@+id/TextView02"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_above="@+id/TextView01"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="210dp"
+         android:text="注销已完成"
+         android:textColor="#008b8b"
+         android:textSize="20dip" />
+    
+</RelativeLayout>
