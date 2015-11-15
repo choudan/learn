@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/sa_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/s_sa_info_edit" />
+
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_btn_height"
+        android:layout_alignParentBottom="true"
+        android:text="@string/confirm" />
+
+    <LinearLayout
+        android:id="@+id/edit_tel_alipay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/confirm"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" 
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/edit_tel"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/item_btn_height"
+            android:layout_weight="1"
+            android:text="@string/edit_tel"
+            android:textSize="@dimen/text_small_size" />
+
+       <!--  <Button
+            android:id="@+id/edit_pas"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/item_btn_height"
+            android:layout_weight="1"
+            android:text="@string/edit_pas"
+            android:textSize="@dimen/text_small_size" /> -->
+
+        <Button
+            android:id="@+id/edit_alipay"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/item_btn_height"
+            android:layout_weight="1"
+            android:text="@string/edit_alipay"
+            android:textSize="@dimen/text_small_size" />
+    </LinearLayout>
+
+</RelativeLayout>

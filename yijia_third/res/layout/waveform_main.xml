@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_vertical_padding"
+    android:paddingRight="@dimen/activity_vertical_padding" >
+
+    <RelativeLayout
+        android:id="@+id/tittle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/waveform_tittle_height"
+        android:layout_marginBottom="@dimen/activity_vertical_padding"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RadioGroup
+            android:id="@+id/choice"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/single"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:checked="true"
+                android:text="@string/single" />
+
+            <RadioButton
+                android:id="@+id/all"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:text="@string/all" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:drawableLeft="@drawable/back"
+            android:gravity="left"
+            android:text="@string/back" >
+        </Button>
+
+        <RadioGroup
+            android:id="@+id/shou_jiao"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <RadioButton
+                android:id="@+id/shou"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="match_parent"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:checked="true"
+                android:text="@string/shou" />
+
+            <RadioButton
+                android:id="@+id/jiao"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="match_parent"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:text="@string/jiao" />
+        </RadioGroup>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tittle"
+        android:layout_marginBottom="@dimen/activity_vertical_padding_five" >
+    </RelativeLayout>
+
+</RelativeLayout>

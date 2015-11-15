@@ -1,0 +1,19 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_right_dialog"
+    android:orientation="vertical"
+    android:id="@+id/exit_layout" >
+
+    <DatePicker
+        android:id="@+id/datepicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/grey"
+        android:calendarViewShown="true"
+        android:layout_centerInParent="true"
+        android:spinnersShown="false" />
+
+</RelativeLayout>

@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:gravity="center" >
+
+    <RelativeLayout
+        android:id="@+id/category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/msa_sa"
+            android:layout_width="@dimen/btn_giant_width"
+            android:layout_height="@dimen/btn_smalll_height"
+            android:layout_margin="10dp" />
+
+        <TextView
+            android:id="@+id/sa_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:text="@string/sa" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/sum_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:text="@string/sum" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/total_num_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@id/sum_text"
+            android:text="@string/total_num" >
+        </TextView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/category" >
+
+        <Button
+            android:id="@+id/msa_btn"
+            android:layout_width="@dimen/btn_giant_width"
+            android:layout_height="@dimen/btn_smalll_height"
+            android:layout_margin="10dp"
+            android:background="@color/red"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/msa_textview"
+            android:layout_width="@dimen/btn_giant_width"
+            android:layout_height="@dimen/btn_smalll_height"
+            android:layout_margin="10dp" />
+
+        <TextView
+            android:id="@+id/sa"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_smalll_height"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:text="@string/sa" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/sum"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_smalll_height"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:text="@string/sum" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/total_num"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_smalll_height"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@id/sum"
+            android:text="@string/total_num" >
+        </TextView>
+    </RelativeLayout>
+
+</RelativeLayout>

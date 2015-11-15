@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/mRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/big_item"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center" >
+        </RadioButton>
+
+        <TextView
+            android:id="@+id/mTextView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/big_item"
+            android:layout_weight="0.6"
+            android:gravity="center" >
+        </TextView>
+
+        <Button
+            android:id="@+id/mButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/big_item"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:text="@string/service_content" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/service_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:gravity="center"
+        android:visibility="gone" />
+
+</LinearLayout>

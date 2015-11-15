@@ -1,0 +1,240 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/waveform_tittle_height"
+        android:layout_below="@id/choice"
+        android:layout_marginBottom="@dimen/activity_vertical_padding_five"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <RadioGroup
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/shou"
+                style="@style/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:checked="true"
+                android:text="@string/shou" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/jiao"
+                style="@style/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:text="@string/jiao" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/one_day"
+                style="@style/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:checked="true"
+                android:text="@string/one_day"/>
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/fifth_days"
+                style="@style/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:text="@string/fifteen_day" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/waveform_tittle_height"
+        android:layout_below="@id/top"
+        android:layout_marginBottom="@dimen/activity_vertical_padding_five"
+        android:layout_marginLeft="40dp"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            style="@style/textView"
+            android:id="@+id/fei"
+            android:layout_width="33dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/set_year"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="@string/fei" />
+
+        <RadioButton
+            style="@style/textView"
+            android:id="@+id/renmai"
+            android:layout_width="33dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/set_year"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/renmai" />
+
+        <RadioButton
+            style="@style/textView"
+            android:id="@+id/dachang"
+            android:layout_width="33dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/set_year"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/dachang" />
+
+        <RadioButton
+            style="@style/textView"
+            android:id="@+id/chongmai"
+            android:layout_width="33dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/set_year"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/chongmai" />
+
+        <RadioButton
+            style="@style/textView"
+            android:id="@+id/xinbao"
+            android:layout_width="33dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/set_year"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/xinbao" />
+
+        <RadioButton
+            style="@style/textView"
+            android:id="@+id/geshu"
+            android:layout_width="33dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/set_year"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/geshu" />
+
+        <RadioButton
+            style="@style/textView"
+            android:id="@+id/dumai"
+            android:layout_width="33dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/set_year"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/dumai" />
+
+        <RadioButton
+            style="@style/textView"
+            android:id="@+id/sanjiao"
+            android:layout_width="33dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/set_year"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/sanjiao" />
+
+        <RadioButton
+            style="@style/textView"
+            android:id="@+id/xin"
+            android:layout_width="33dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/set_year"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/xin" />
+
+        <RadioButton
+            style="@style/textView"
+            android:id="@+id/xiaochang"
+            android:layout_width="33dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/set_year"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/xiaochang" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bottom"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:background="#ffffff"
+            android:contentDescription="@null"
+            android:src="@drawable/left_arrow" >
+        </ImageButton>
+
+        <lecho.lib.hellocharts.view.LineChartView
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingRight="25dp"
+            >
+        </lecho.lib.hellocharts.view.LineChartView>
+
+        <ImageButton
+            android:id="@+id/right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:background="#ffffff"
+            android:contentDescription="@null"
+            android:src="@drawable/right_arrow" >
+        </ImageButton>
+    </LinearLayout>
+
+</RelativeLayout>

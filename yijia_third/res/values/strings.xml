@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">颐佳</string>
+    <string name="action_settings">颐佳</string>
+
+    <!-- 注册信息 -->
+    <string name="fullname">颐佳经络仪</string>
+    <string name="device_connected">颐佳经络仪已连接</string>
+    <string name="new_device_prompt">提示：新经络仪完成注册才能使用</string>
+    <string name="new_device">新经经络仪</string>
+    <string name="input_name">请输入您的姓名</string>
+    <string name="input_name_prompt">请输入您的真实姓名，您的姓名将被用于语音提示和经络仪命名，输入姓名后将无法更改。</string>
+    <string name="input_sex">请选择您的性别</string>
+    <string name="input_sex_prompt">经络仪的检测依赖于性别</string>
+    <string name="input_sex_prompt_">输入性别后将无法更改</string>
+    <string name="input_date">请输入您的出生年月</string>
+    <string name="input_date_prompt">经络仪的检测数据依赖于年龄</string>
+    <string name="input_date_prompt_">输入年龄后将无法更改</string>
+    <string name="input_length_prompt">请输入您的身高</string>
+    <string name="input_weight_prompt">请输入您的体重</string>
+    <string name="Kg">Kg</string>
+    <string name="cm">cm</string>
+    <string name="input_length_weight_prompt">身高体重为基础参考值</string>
+    <string name="man">男</string>
+    <string name="women">女</string>
+    <string name="request_identity_code">获取验证码</string>
+    <string name="input_alipay">请输入要绑定的支付宝账号</string>
+    <string name="input_new_alipay">请输入支付宝账号</string>
+    <string name="input_identity_code">请输入验证码</string>
+    <string name="input_tel">请输入有效手机号码</string>
+    <string name="input_tel_prompt">不输入手机号只能用经络仪登录系统</string>
+    <string name="input_password">请输入密码</string>
+    <string name="input_new_password">请输入新密码</string>
+    <string name="skip">跳过</string>
+    <string name="contract_extension">续约</string>
+    <string name="chooese_exp">请选择关联医生/专家</string>
+    <string name="wechat_pay">微信支付</string>
+    <string name="alipay_pay">支付宝支付</string>
+    <string name="code_pay">兑换码支付</string>
+    <string name="code_pay_hint">请输入您的兑换码</string>
+    <string name="service_alter_prompt">服务更改</string>
+    <string name="service_alter">更改专家/医生</string>
+    <string name="input_error">请检查输入参数是否合法</string>
+
+    <!-- 登陆信息 -->
+    <string name="tittle">标题</string>
+    <string name="hint_account">输入账号</string>
+    <string name="hint_password">输入密码</string>
+    <string name="login">登陆</string>
+    <string name="info">个人信息</string>
+    <string name="connect">连接经络仪</string>
+    <string name="wechat">微信版</string>
+    <string name="institution">机构版</string>
+    <string name="app_choice">版本选择</string>
+    <string name="add">生成</string>
+    <string name="check">查看</string>
+
+    <!-- 聊天界面 -->
+    <string name="viewpager_indicator">%1$d/%2$d</string>
+    <string name="devide_line">%1$d/%2$d</string>
+    <string name="upload_pic">上传照片</string>
+
+    <!-- 生成兑换码 -->
+    <string name="code">兑换码</string>
+    <string name="add_code">生成兑换码</string>
+    <string name="add_common_code_doc">医生兑换码</string>
+    <string name="add_common_code_exp">专家兑换码</string>
+    <string name="add_service">生成服务</string>
+    <string name="common_code">普通兑换码</string>
+    <string name="free_code">免费兑换码</string>
+    <string name="date">日期</string>
+    <string name="generate">生成</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="used">已使用</string>
+    <string name="unused">未使用</string>
+    <string name="copy">复制到剪贴板</string>
+    <string name="code_state">兑换码状态</string>
+
+    <!-- 用户信息 -->
+    <string name="register_declare">注册声明</string>
+    <string name="institution_name">机构名称:</string>
+    <string name="institution_admin">管理员:</string>
+    <string name="password">密码:</string>
+    <string name="sex">性别:</string>
+    <string name="age">年龄:</string>
+    <string name="email">邮箱:</string>
+    <string name="tel">电话:</string>
+    <string name="wechat_account">微信:</string>
+    <string name="alipay">支付宝账号:</string>
+    <string name="name">姓名:</string>
+    <string name="name_less">姓名</string>
+    <string name="hosiptal">医院:</string>
+    <string name="dept">科室:</string>
+    <string name="doctor_license">行医许可证:</string>
+    <string name="introduction">简介:</string>
+    <string name="qq">QQ:</string>
+    <string name="service_type">所属服务:</string>
+    <string name="head_img">头像</string>
+    <string name="height">身高:</string>
+    <string name="weight">体重:</string>
+    <string name="weight_index">体重指数:</string>
+    <string name="relation_msa">关联专家:</string>
+    <string name="relation_msa_sa">关联专家/医生</string>
+    <string name="edit_tel_pas">修改电话/密码</string>
+    <string name="edit_tel">修改电话</string>
+    <string name="edit_pas">修改密码</string>
+    <string name="edit_alipay">修改支付宝</string>
+    <string name="hosiptal_dept">医院科室</string>
+    <string name="logout_user">已注销用户</string>
+    <string name="logout_date">注销日期</string>
+    <string name="line">线</string>
+    <string name="add_head_img">添加头像</string>
+
+    <!-- 机构 -->
+    <string name="add_institution">生成机构管理员</string>
+    <string name="inst_info">机构信息</string>
+    <string name="inst_user_info">机构用户</string>
+    <string name="total_user">总用户数:</string>
+    <string name="present_user">当前用户数:</string>
+    <string name="total_num">总用户</string>
+    <string name="present_num">当前用户</string>
+    <string name="inst">机构</string>
+    <string name="exp_doc">专家/医生</string>
+    <string name="search_init">请输入机构名</string>
+    <string name="init_list">机构列表</string>
+    <string name="user_list">用户列表</string>
+    <string name="msa_list">用户列表</string>
+    <string name="service_type_list">服务类型</string>
+
+    <!-- 主服务号 -->
+    <string name="add_main_service">生成主服务账号</string>
+    <string name="msa_info">个人信息</string>
+    <string name="msa_team">关联团队</string>
+    <string name="msa_delete">删除主服务账号</string>
+    <string name="ques_repository">问题库</string>
+    <string name="delete_prompt">提示：确定删除请点击下一步</string>
+    <string name="msa">主服务</string>
+    <string name="msa_name">主服务:</string>
+    <string name="query_msa">查看主服务号</string>
+    <string name="delete">删除</string>
+    <string name="cancel">取消</string>
+    <string name="prompt_delete">删除之后，该服务下的用户将重新分配</string>
+
+    <!-- 服务号 -->
+    <string name="add_sa">生成服务账号</string>
+    <string name="sa_info">个人信息</string>
+    <string name="sa_team">关联用户</string>
+    <string name="query_sa">查看服务账号</string>
+    <string name="sa">服务号</string>
+    <string name="answered">已答复</string>
+    <string name="unanswered">未答复</string>
+
+    <!-- 查看用户情况入口 -->
+    <string name="user_info">用户信息</string>
+    <string name="questionnaire_record">问答卷记录</string>
+    <string name="questionnaire">问答卷</string>
+    <string name="new_questionnaire">生成新问卷</string>
+    <string name="questionnaire_history">问卷历史记录</string>
+    <string name="communication">沟通记录</string>
+    <string name="waveform">波形图</string>
+    <string name="dev_info">使用信息</string>
+    <string name="oeder_check">订单查询</string>
+    <string name="direction_for_use">使用说明</string>
+    <string name="user">用户</string>
+    <string name="activate_time">设备激活时间：</string>
+    <string name="service_deadline">服务截止时间：</string>
+    <string name="gift_month_">赠送服务时间：</string>
+    <string name="deadline">服务截止日期</string>
+    <string name="avg_time">平均使用次数：</string>
+    <string name="upload_record">上传记录：</string>
+
+    <!-- 服务 -->
+    <string name="service_name">服务名称：</string>
+    <string name="service_startTime">服务开始时间：</string>
+    <string name="service_providerUnit">机构：</string>
+    <string name="service_providerName">服务提供者：</string>
+    <string name="service_valid">当前服务</string>
+    <string name="service_valid_">历史服务</string>
+    <string name="admin">管理员</string>
+    <string name="personal">个人</string>
+    <string name="service_content">服务内容</string>
+    <string name="service_list">服务列表</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    <string name="gift_month">赠送服务时间</string>
+    <string name="gift_reason">填写服务更换提示内容</string>
+    <string name="send">发送</string>
+    <string name="default_msa">备选主服务号</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="service_inst">机构</string>
+    <string name="service_personal">个人</string>
+    <string name="add_order">添加服务</string>
+    <string name="add_order_type">请选择您的身份</string>
+    <string name="order_type_inst">机构</string>
+    <string name="order_type_personal">个人</string>
+
+    <!-- 结算 -->
+    <string name="settlement">结算</string>
+    <string name="finance">财务</string>
+    <string name="staff">人员</string>
+    <string name="statistics">统计</string>
+    <string name="assign">分配</string>
+    <string name="total_income">总收入</string>
+    <string name="total_expense">总支出</string>
+    <string name="msa_sa">主服务/服务</string>
+    <string name="total_present">总用户/当前用户</string>
+    <string name="history_settlement">历史结算</string>
+    <string name="pre_settlement">本期预结算</string>
+    <string name="settlement_record">结算记录</string>
+    <string name="msa_sa_settlement_detail">专家/医生结算详情</string>
+    <string name="this_settlement">本期结算</string>
+    <string name="settlement_date">预结算日</string>
+    <string name="msa_settlement">专家结算</string>
+    <string name="inst_settlement">机构结算</string>
+    <string name="sum">金额</string>
+    <string name="team_num">团队人数</string>
+    <string name="user_statistics">用户统计</string>
+    <string name="cash_sum">保留金额</string>
+
+    <!-- 分配 -->
+    <string name="assign_user">分配用户</string>
+    <string name="assigned">已分配</string>
+    <string name="unassigned">未分配</string>
+    <string name="assign_prompt">请选择需要分配的用户</string>
+    <string name="transfer_prompt">请选择需要转移的用户</string>
+    <string name="bound_sa">请选择需要绑定的医生</string>
+    <string name="doc">医生</string>
+    <string name="doc_user">当前医生绑定用户情况</string>
+
+    <!-- 按键 -->
+    <string name="agree">同意</string>
+    <string name="confirm">确定</string>
+    <string name="next_step">下一步</string>
+    <string name="pay_finish">支付完成</string>
+    <string name="pay_fail">支付失败</string>
+    <string name="alter_finish">更换完成</string>
+    <string name="alter_fail">更换失败</string>
+    <string name="back">返 回</string>
+    <string name="edit">编辑</string>
+    <string name="logout">注销</string>
+    <string name="finish">完成</string>
+    <string name="save">保存</string>
+    <string name="add_camera">拍照</string>
+    <string name="add_pic">照片</string>
+    <string name="upload_photo">开始上传</string>
+    <string name="get_cash">提现</string>
+    <string name="title_activity_app_choice">AppChoice</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- 对话框 -->
+    <string name="loading">正在加载...</string>
+
+    <!-- ble -->
+    <string name="ble_not_supported">不支持BLE</string>
+    <string name="label_data">数据:</string>
+    <string name="label_device_address">设备地址:</string>
+    <string name="label_state">状态:</string>
+    <string name="no_data">无数据</string>
+    <string name="connected">已连接</string>
+    <string name="disconnected">未连接</string>
+    <string name="title_devices">搜索BLE设备</string>
+    <string name="error_bluetooth_not_supported">设备不支持BLE.</string>
+    <string name="synchordata">同步数据</string>
+    <string name="unknown_device">未知设备</string>
+    <string name="unknown_characteristic">未知特征值</string>
+    <string name="unknown_service">未知服务</string>
+    <!-- ble Menu items -->
+    <string name="menu_connect">连接</string>
+    <string name="menu_disconnect">断开</string>
+    <string name="menu_scan">搜索</string>
+    <string name="menu_stop">停止</string>
+    
+    <!-- 波形图 -->
+    <string name="fei">肺</string>
+    <string name="renmai">任脉</string>
+    <string name="dachang">大肠</string>
+    <string name="chongmai">冲脉</string>
+    <string name="xinbao">心包</string>
+    <string name="geshu">膈腧</string>
+    <string name="sanjiao">三焦</string>
+    <string name="xin">心</string>
+    <string name="xiaochang">小肠</string>
+    <string name="pi">脾</string>
+    <string name="gan">肝</string>
+    <string name="chongmaidaimai">冲脉带脉</string>
+    <string name="wei">胃</string>
+    <string name="dumai">督脉</string>
+    <string name="dan">胆</string>
+    <string name="shen">肾</string>
+    <string name="pangguang">膀胱</string>
+    <string name="shou">手</string>
+    <string name="jiao">脚</string>
+    <string name="single">单个经络</string>
+    <string name="all">全部经络</string>
+    <string name="jl_value">经络值</string>   
+    
+    <string name="pop_date">刻度</string>
+    <string name="hour">时辰</string>
+    <string name="one_day">1天</string>
+    <string name="five_day">5天</string>
+    <string name="fifteen_day">15天</string>
+    <string name="thirty_day">30天</string>
+    <string name="ninty_day">90天</string>
+    <string name="three_hundred_sixty_day">360天</string>
+    
+	<string-array name="labelTop">
+	    <item name="fei">肺</item>
+	    <item name="renmai">任脉</item>
+	    <item name="dachang">大肠</item>
+	    <item name="chongmai">冲脉</item>
+	    <item name="xinbao">心包</item>
+	    <item name="geshu">膈腧</item>
+	    <item name="dumai">督脉</item>
+	    <item name="sanjiao">三焦</item>
+	    <item name="xin">心</item>
+	    <item name="xiaochang">小肠</item>
+	</string-array>
+	
+	<string-array name="labelBottom">
+	    <item name="pi">脾</item>
+	    <item name="gan">肝</item>
+	    <item name="renmai">任脉</item>
+	    <item name="chongmaidaimai">冲脉带脉</item>
+	    <item name="wei">胃</item>
+	    <item name="geshu">膈腧</item>
+	    <item name="dumai">督脉</item>
+	    <item name="dan">胆</item>
+	    <item name="shen">肾</item>
+	    <item name="pangguang">膀胱</item>
+	</string-array>
+
+</resources>

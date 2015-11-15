@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/activity_horizontal_margin" >
+
+    <TextView
+        android:id="@+id/msa_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/headimage_size"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/questionnaire"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_big_box"
+        android:gravity="top|left" />
+
+</LinearLayout>

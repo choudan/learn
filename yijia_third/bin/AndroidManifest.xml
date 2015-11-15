@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.yijia_third"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:name="com.example.yijia.third.base.BaseApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
+        <activity
+            android:name="com.example.yijia.third.admin.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.yijia.third.login.Login"
+            android:label="@string/app_name" >
+<!--             <intent-filter> -->
+<!--                 <action android:name="android.intent.action.MAIN" /> -->
+
+<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--             </intent-filter> -->
+
+        </activity>
+        <activity
+            android:name="com.example.yijia.third.admin.AppChoice"
+            android:label="@string/title_activity_app_choice" >
+        </activity>
+        <activity
+            android:name="com.example.yijia.third.user.AqueryLogoutUser"
+            android:label="@string/title_activity_app_choice" >
+        </activity>
+        <activity
+            android:name="com.example.yijia.third.service.QueryServiceActivity"
+            android:label="@string/title_activity_app_choice" >
+        </activity>
+        <activity
+            android:name="com.example.yijia.third.service.ServiceDetail"
+            android:label="@string/title_activity_app_choice" >
+        </activity>
+        <activity
+            android:name="com.example.yijia.third.user.QuestionnaireRecord"
+            android:label="@string/title_activity_app_choice" >
+        </activity>
+        <activity
+            android:name="com.example.yijia.third.msa.AquestionnaireList"
+            android:label="@string/title_activity_app_choice" >
+        </activity>
+        <activity
+            android:name="com.example.yijia.third.msa.AdeleteMsaActivity"
+            android:label="@string/title_activity_app_choice" >
+        </activity>
+        <activity android:name="com.example.yijia.third.picture.ImagePager" >
+        </activity>
+        <activity android:name="com.example.yijia.third.user.QueryUserInfo" >
+        </activity>
+        <activity android:name="com.example.yijia.third.user.Waveform" >
+        </activity>
+        <activity android:name="com.example.yijia.third.msa.Amsa" >
+        </activity>
+        <activity android:name="com.example.yijia.third.sa.Asa" >
+        </activity>
+        <activity android:name="com.example.yijia.third.common.BaseActivity" >
+        </activity>
+        <activity android:name="com.example.yijia.third.inst.IsettlementDetail" >
+        </activity>
+        <activity android:name="com.example.yijia.third.settlement.AmsaSettlementDetail" >
+        </activity>
+        <activity android:name="com.example.yijia.third.settlement.AsaSettlementDetail" >
+        </activity>
+        <activity android:name="com.example.yijia.third.code.AddCode" >
+        </activity>
+        <activity android:name="com.example.yijia.third.inst.AaddInst" >
+        </activity>
+        <activity android:name="com.example.yijia.third.msa.AaddMsa" >
+        </activity>
+        <activity android:name="com.example.yijia.third.msa.AaddMsaType" >
+        </activity>
+        <activity android:name="com.example.yijia.third.msa.AaddMsaConfirm" >
+        </activity>
+        <activity android:name="com.example.yijia.third.inst.Iinst" >
+        </activity>
+        <activity android:name="com.example.yijia.third.inst.IqueryCodeStateList" >
+        </activity>
+        <activity android:name="com.example.yijia.third.inst.IqueryDocExpInfo" >
+        </activity>
+        <activity android:name="com.example.yijia.third.inst.IqueryDocExpList" >
+        </activity>
+        <activity android:name="com.example.yijia.third.inst.IqueryInstInfo" >
+        </activity>
+        <activity android:name="com.example.yijia.third.inst.IqueryUserList" >
+        </activity>
+        <activity android:name="com.example.yijia.third.inst.IqueryUserStatistics" >
+        </activity>
+        <activity android:name="com.example.yijia.third.inst.IinputCode" >
+        </activity>
+        <activity android:name="com.example.yijia.third.inst.IeditTelPas" >
+        </activity>
+        <activity android:name="com.example.yijia.third.inst.IeditAlipay" >
+        </activity>
+        <activity android:name="com.example.yijia.third.msa.Mmsa" >
+        </activity>
+        <activity android:name="com.example.yijia.third.msa.MquestionnaireList" >
+
+
+        </activity>
+        <activity android:name="com.example.yijia.third.msa.MeditQuestionnaire" >
+        </activity>
+        <activity android:name="com.example.yijia.third.msa.MquerySaList" >
+        </activity>
+        <activity android:name="com.example.yijia.third.msa.MassignSaList" >
+        </activity>
+        <activity android:name="com.example.yijia.third.msa.MassignChooseSaList" >
+        </activity>
+        <activity android:name="com.example.yijia.third.msa.MassignState" >
+        </activity>
+        <activity android:name="com.example.yijia.third.msa.MassignChooseUserList" >
+        </activity>
+        <activity android:name="com.example.yijia.third.msa.MmsaInfo" >
+        </activity>
+        <activity
+            android:name="com.example.yijia.third.sa.MdeleteSa"
+            android:theme="@style/MyDialogStyle" >
+        </activity>
+        <activity android:name="com.example.yijia.third.msa.MaddSaInfo" >
+        </activity>
+        <activity android:name="com.example.yijia.third.msa.AquestionnaireDetail" >
+        </activity>
+        <activity android:name="com.example.yijia.third.msa.MquestionnaireSwipeList" >
+        </activity>
+        <activity android:name="com.example.yijia.third.sa.Ssa" >
+        </activity>
+        <activity android:name="com.example.yijia.third.sa.SsaInfo" >
+        </activity>
+        <activity android:name="com.example.yijia.third.sa.SquestionnaireList" >
+        </activity>
+        <activity
+            android:name="com.example.yijia.third.sa.SdeleteQues"
+            android:theme="@style/MyDialogStyle" >
+        </activity>
+        <activity
+            android:name="com.example.yijia.third.msa.AdeleteMsa"
+            android:theme="@style/MyDialogStyle" >
+        </activity>
+        <activity
+            android:name="com.example.yijia.wiget.dialog.DeleteDialog"
+            android:theme="@style/MyDialogStyle" >
+        </activity>
+        <activity android:name="com.example.yijia.third.base.RegisterBaseActivity" >
+        </activity>
+        <activity android:name="com.example.yijia.third.sa.SnewQuestionnaireList" >
+        </activity>
+        <activity android:name="com.example.yijia.third.sa.SeditQuestionnaire" >
+        </activity>
+        <activity android:name="com.example.yijia.third.user.UnewOrderType" >
+        </activity>
+        <activity android:name="com.example.yijia.third.user.UpayCodePath" >
+        </activity>
+        <activity android:name="com.example.yijia.third.user.UpayPath" >
+        </activity>
+        <activity android:name="com.example.yijia.third.user.UqueryMsaList" >
+        </activity>
+        <activity android:name="com.example.yijia.third.user.UuserDeclare" >
+        </activity>
+        <activity android:name="com.example.yijia.third.user.UpayResult" >
+        </activity>
+        <activity android:name="com.example.yijia.third.uploadphoto.UuploadPhoto" >
+        </activity>
+        <activity
+            android:name="com.example.yijia.third.uploadphoto.UaddPath"
+            android:theme="@style/MyDialogStyleBottom" >
+        </activity>
+        <activity android:name="com.example.yijia.third.uploadphoto.UallPhoto" >
+        </activity>
+        <activity android:name="com.example.yijia.third.uploadphoto.UimagePager" >
+        </activity>
+        <activity
+            android:name="com.example.yijia.third.settlement.AsettlementDate"
+            android:theme="@style/MyDialogStyle" >
+        </activity>
+        <activity
+            android:name="com.example.yijia.third.uploadphoto.UtakePhotoDialog"
+            android:theme="@style/MyDialogStyle" >
+        </activity>
+        <activity android:name="com.example.yijia.third.user.Uuser" >
+        </activity>
+        <activity android:name="com.example.yijia.third.user.UuserOrderList" >
+        </activity>
+        <activity android:name="com.example.yijia.third.user.UScommunication" >
+        </activity>
+        <activity android:name="com.example.yijia.third.user.UuserSearchList" >
+        </activity>
+        <activity android:name="com.example.yijia.third.user.UuserInfo" >
+        </activity>
+        <activity android:name="com.example.yijia.third.user.UuserServiceTypeList" >
+        </activity>
+        <activity android:name="com.example.yijia.third.user.UquestionnaireRecord" >
+        </activity>
+        <activity android:name="com.example.yijia.third.settlement.column.MSsettlement" >
+        </activity>
+        <activity android:name="com.example.yijia.third.ble.DeviceControlActivity" >
+        </activity>
+        <activity android:name="com.example.yijia.third.ble.DeviceScanActivity" >
+        </activity>
+        <activity
+            android:name="com.example.yijia.third.waveform.WaveformMain"
+            android:screenOrientation="landscape" 
+            android:configChanges="screenSize|keyboardHidden|orientation">
+<!--              <intent-filter> -->
+<!--                 <action android:name="android.intent.action.MAIN" /> -->
+
+<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--             </intent-filter> -->
+        </activity>
+        <activity
+            android:name="com.example.yijia.third.user.UuserServiceAlter"
+            android:theme="@style/MyDialogStyle" >
+        </activity>
+        
+        <!-- 新用户注册 -->
+        <activity android:name="com.example.yijia.third.user.RegisterBegin">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>                   
+        </activity>
+        
+        <activity android:name="com.example.yijia.third.user.RegisterName"></activity>
+        <activity android:name="com.example.yijia.third.user.RegisterSex"></activity>
+        <activity android:name="com.example.yijia.third.user.RegisterDate"></activity>
+        <activity android:name="com.example.yijia.third.user.RegisterWeightLength"></activity>
+        <activity android:name="com.example.yijia.third.user.RegisterTel"></activity>
+        <activity android:name="com.example.yijia.third.user.RegisterConfirm"></activity>
+                
+              
+        <!-- 测试 -->
+        <activity android:name="com.example.yijia.third.test.Test">
+<!--              <intent-filter> -->
+<!--                 <action android:name="android.intent.action.MAIN" /> -->
+
+<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--             </intent-filter>            -->
+        </activity>
+    </application>
+
+</manifest>

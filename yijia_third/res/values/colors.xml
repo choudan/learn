@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="red">#ff0000</color>
+    <color name="white">#ffffffff</color>
+    <color name="blur_bg">#FFFAF0</color>
+    <color name="text_gray">#696969</color>
+    <color name="black">#000000</color>
+    <color name="grey">#808080</color>
+    <color name="right_bg">#696969</color>
+    
+    <!-- 注册 -->
+    <color name="blue">#1293a5</color>
+    <color name="transparent">#00000000</color>
+    <color name="text_normal">#00000F</color>
+    <color name="text_red">#FF0000</color>
+    <color name="bottom_bg">#dfdfe0</color>
+    
+    <!-- 加载框文本颜色 -->
+    <color name="text_content">#ffa19d94</color>
+    
+    <!-- 分割线 -->
+    <color name="lightgray">#e6e5e5</color>
+
+</resources>

@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/btn_big_height"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/sa_info"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_btn_height"
+            android:text="@string/sa_info" />
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/a_sa_info"
+            android:visibility="gone" >
+        </include>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/sa_team"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_btn_height"
+            android:layout_marginTop="0dp"
+            android:text="@string/sa_team" />
+
+        <ListView
+            android:id="@+id/list_user"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+        </ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/settlement_record"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_btn_height"
+            android:layout_marginTop="0dp"
+            android:text="@string/settlement_record" />
+
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            layout="@layout/common_column" />
+    </LinearLayout>
+
+</LinearLayout>

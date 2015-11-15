@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <include
+        android:id="@+id/fragment_tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/tittle_edit" />
+
+    <Button
+        android:id="@+id/add_common_code_doc"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/box_margin_left_right"
+        android:layout_marginRight="@dimen/box_margin_left_right"
+        android:background="@drawable/app_choice_btn"
+        android:text="@string/add_common_code_doc" >
+    </Button>
+
+    <Button
+        android:id="@+id/add_main_service"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_above="@id/add_common_code_doc"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="@dimen/box_margin_left_right"
+        android:layout_marginRight="@dimen/box_margin_left_right"
+        android:background="@drawable/app_choice_btn"
+        android:text="@string/add_main_service" >
+    </Button>
+
+    <Button
+        android:id="@+id/add_institution"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_above="@id/add_main_service"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="@dimen/box_margin_left_right"
+        android:layout_marginRight="@dimen/box_margin_left_right"
+        android:background="@drawable/app_choice_btn"
+        android:text="@string/add_institution" >
+    </Button>
+
+    <Button
+        android:id="@+id/add_common_code_exp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/add_common_code_doc"
+        android:layout_marginLeft="@dimen/box_margin_left_right"
+        android:layout_marginRight="@dimen/box_margin_left_right"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/app_choice_btn"
+        android:text="@string/add_common_code_exp" >
+    </Button>
+
+    <Button
+        android:id="@+id/add_free_code"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/add_common_code_exp"
+        android:layout_marginLeft="@dimen/box_margin_left_right"
+        android:layout_marginRight="@dimen/box_margin_left_right"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/app_choice_btn"
+        android:text="@string/free_code" >
+    </Button>
+
+    <Button
+        android:id="@+id/add_service"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/add_free_code"
+        android:layout_marginLeft="@dimen/box_margin_left_right"
+        android:layout_marginRight="@dimen/box_margin_left_right"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/app_choice_btn"
+        android:text="@string/add_service" >
+    </Button>
+
+</RelativeLayout>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/activity_vertical_padding"
+        android:layout_marginRight="@dimen/activity_vertical_padding" >
+
+        <RadioGroup
+            android:id="@+id/btn_group"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="@dimen/activity_vertical_padding"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <RadioButton
+                android:id="@+id/fei"
+                android:layout_width="33dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/fei" />
+
+            <RadioButton
+                android:id="@+id/renmai"
+                android:layout_width="33dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/renmai" />
+
+            <RadioButton
+                android:id="@+id/dachang"
+                android:layout_width="33dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/dachang" />
+
+            <RadioButton
+                android:id="@+id/chongmai"
+                android:layout_width="33dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/chongmai" />
+
+            <RadioButton
+                android:id="@+id/xinbao"
+                android:layout_width="33dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/xinbao" />
+
+            <RadioButton
+                android:id="@+id/geshu"
+                android:layout_width="33dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/geshu" />
+
+            <RadioButton
+                android:id="@+id/dumai"
+                android:layout_width="33dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/dumai" />
+
+            <RadioButton
+                android:id="@+id/sanjiao"
+                android:layout_width="33dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/sanjiao" />
+
+            <RadioButton
+                android:id="@+id/xin"
+                android:layout_width="33dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/xin" />
+
+            <RadioButton
+                android:id="@+id/xiaochang"
+                android:layout_width="33dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_year"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/xiaochang" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/btn_group"
+            android:orientation="horizontal" >
+
+            <HorizontalScrollView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="9"
+                android:scrollbars="none" >
+
+                <LinearLayout
+                    android:id="@+id/text_dates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/m_five" >
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <Button
+                android:id="@+id/pop_menu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="@string/pop_date" >
+            </Button>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:background="#ffffff"
+            android:contentDescription="@null"
+            android:src="@drawable/left_arrow" >
+        </ImageButton>
+
+        <lecho.lib.hellocharts.view.LineChartView
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingRight="25dp"
+            
+             >
+        </lecho.lib.hellocharts.view.LineChartView>
+
+        <ImageButton
+            android:id="@+id/right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:background="#ffffff"
+            android:contentDescription="@null"
+            android:src="@drawable/right_arrow" >
+        </ImageButton>
+    </LinearLayout>
+</RelativeLayout>

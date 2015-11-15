@@ -1,0 +1,62 @@
+<!--
+ <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yijia.third.admin.MainActivity$PlaceholderFragment" >
+-->
+
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_tab_group"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/btn_big_height"
+    android:layout_gravity="bottom"
+    android:background="@color/blue"
+    android:orientation="horizontal" >
+
+    <!--
+         <RadioGroup
+        android:id="@+id/main_tab_group"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/btn_big_height"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal" 
+        android:background="@color/blue"
+        >
+    -->
+
+    <RadioButton
+        android:id="@+id/add"
+        style="@style/MMTabButton"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:text="@string/add" />
+
+    <RadioButton
+        android:id="@+id/check"
+        style="@style/MMTabButton"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:drawablePadding="3dp"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:text="@string/check" />
+
+    <RadioButton
+        android:id="@+id/settlement"
+        style="@style/MMTabButton"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:drawablePadding="3dp"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:text="@string/settlement" />
+
+</RadioGroup>
+<!-- </RelativeLayout> -->

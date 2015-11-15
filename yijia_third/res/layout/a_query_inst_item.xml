@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants">
+
+    <TextView
+        android:id="@+id/inst_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_big_width" />
+
+    <LinearLayout
+        android:id="@+id/inst_info_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/inst_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/inst_info" />
+
+        <Button
+            android:id="@+id/inst_user_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="@string/inst_user_info" />
+    </LinearLayout>
+
+</LinearLayout>

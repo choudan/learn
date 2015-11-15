@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/info" />
+
+    <Button
+        android:id="@+id/add_sa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_sa" />
+
+    <Button
+        android:id="@+id/query_sa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/query_sa" />
+
+    <Button
+        android:id="@+id/assign_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/assign_user" />
+
+    <Button
+        android:id="@+id/settlement_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/settlement_record" >
+    </Button>
+    <Button
+        android:id="@+id/ques_repository"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ques_repository" >
+    </Button>
+
+</LinearLayout>

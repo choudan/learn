@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:gravity="center"
+            android:text="@string/date" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_vertical_margin" >
+
+            <EditText
+                android:id="@+id/code_num"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:labelFor="@+id/code_num" />
+
+            <Button
+                android:id="@+id/minus"
+                android:layout_width="@dimen/btn_mid_height"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/code_num"
+                android:text="@string/minus" >
+            </Button>
+
+            <Button
+                android:id="@+id/plus"
+                android:layout_width="@dimen/btn_mid_height"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/code_num"
+                android:text="@string/plus" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/generate"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_mid_height"
+            android:layout_gravity="center"
+            android:background="@drawable/login_btn"
+            android:text="@string/generate" />
+    </LinearLayout>
+    
+
+    <ListView
+        android:id="@+id/list_code_generate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/code"
+        android:layout_marginBottom="60dp" 
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+    </ListView>
+
+    <Button
+        android:id="@+id/copy"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/copy" 
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

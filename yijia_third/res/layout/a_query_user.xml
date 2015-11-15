@@ -1,0 +1,161 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/user_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/user_info" />
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/a_user_info"
+        android:visibility="gone" >
+    </include>
+
+    <Button
+        android:id="@+id/questionnaire_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/questionnaire_record" />
+
+    <LinearLayout
+        android:id="@+id/questionnaire_sa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/new_questionnaire"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/new_questionnaire" />
+
+        <Button
+            android:id="@+id/questionnaire_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/questionnaire_history" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/communication"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/communication" />
+
+    <Button
+        android:id="@+id/waveform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/waveform" />
+
+    <Button
+        android:id="@+id/dev_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dev_info" >
+    </Button>
+
+   <!--  <include
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/a_query_user_dev_info_detail"
+        android:visibility="gone" /> -->
+
+    <LinearLayout
+        android:id="@+id/dev_info_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/activate_time" />
+
+            <TextView
+                android:id="@+id/activate_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/service_deadline" />
+
+            <TextView
+                android:id="@+id/service_deadline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/avg_time" />
+
+            <TextView
+                android:id="@+id/avg_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/upload_record" />
+
+            <ListView
+                android:id="@+id/upload_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

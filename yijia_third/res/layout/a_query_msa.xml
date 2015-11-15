@@ -1,0 +1,132 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/btn_big_height"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/msa_info"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_btn_height"
+            android:text="@string/msa_info" />
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/a_msa_info"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/msa_team"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_btn_height"
+            android:layout_marginTop="0dp"
+            android:text="@string/msa_team" />
+
+        <ListView
+            android:id="@+id/list_sa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+        </ListView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ques_repository"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_btn_height"
+        android:layout_marginTop="0dp"
+        android:text="@string/ques_repository" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/settlement_record"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_btn_height"
+            android:layout_marginTop="0dp"
+            android:text="@string/settlement_record" />
+
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            layout="@layout/common_column" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/msa_delete"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_btn_height"
+            android:layout_marginTop="0dp"
+            android:text="@string/msa_delete" />
+
+        <LinearLayout
+            android:id="@+id/msa_delete_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/msa_name"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:text="@string/name" />
+
+            <TextView
+                android:id="@+id/msa_team_total"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:text="@string/total_user" />
+
+            <TextView
+                android:id="@+id/msa_team_present"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:text="@string/present_user" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/delete_prompt"
+                android:textColor="@color/red" />
+
+            <Button
+                android:id="@+id/next_step"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_mid_height"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:text="@string/next_step" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

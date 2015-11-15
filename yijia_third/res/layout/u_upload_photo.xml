@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/edit_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/u_s_wordsbox"
+        android:inputType="text"
+        android:labelFor="@+id/edit_content"
+        android:padding="5dp" />
+
+    <Button
+        android:id="@+id/upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:onClick="upload"
+        android:text="@string/upload_photo"
+        android:textSize="18sp" />
+
+    <GridView
+        android:id="@+id/photo_gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/upload"
+        android:layout_below="@id/edit_content"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="10dp"
+        android:columnWidth="70dp"
+        android:horizontalSpacing="10dp"
+        android:numColumns="3"
+        android:padding="20dp"
+        android:scrollbars="none"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp" >
+    </GridView>
+
+</RelativeLayout>

@@ -1,0 +1,174 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linear_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:gravity="right"
+            android:text="@string/service_name" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/service_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:labelFor="@+id/service_name" >
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ser_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_name"
+        android:baselineAligned="true" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/msa" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/msa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:labelFor="@+id/msa" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/sa" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/sa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:labelFor="@+id/sa" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_admin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/admin" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/admin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:labelFor="@+id/admin" >
+            </EditText>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/edit_service_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/relation_msa_sa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/relation_msa_sa" />
+
+        <Button
+            android:id="@+id/edit_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/edit" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/check_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/edit_service_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <CheckBox
+            android:id="@+id/inst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/inst" />
+
+        <CheckBox
+            android:id="@+id/personal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/personal" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/service_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/check_box"
+        android:layout_below="@id/ser_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/edit_big_box"
+        android:gravity="top"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:labelFor="@+id/service_content"
+        android:padding="2dp" >
+    </EditText>
+
+</RelativeLayout>

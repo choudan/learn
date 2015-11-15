@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sa_info_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/assigned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/assigned" >
+    </Button>
+
+    <Button
+        android:id="@+id/unassigned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/assigned"
+        android:text="@string/unassigned" >
+    </Button>
+
+</RelativeLayout>

@@ -1,0 +1,117 @@
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="150dp"
+        android:layout_marginTop="45dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="@string/input_sex"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_size" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/man"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/women"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/TextView04"
+            android:layout_alignBottom="@+id/TextView04"
+            android:layout_alignLeft="@+id/TextView01"
+            android:gravity="center"
+            android:text="@string/man"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/TextView02"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/input_sex_prompt"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_prompt_size" 
+            />
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:text="@string/input_sex_prompt_"
+            android:textColor="@color/text_red"
+            android:textSize="@dimen/text_prompt_size" />
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/TextView01"
+            android:layout_below="@+id/radioGroup"
+            android:gravity="center"
+            android:text="@string/women"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/bottom_bg" >
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/back" />
+
+        <Button
+            android:id="@+id/next_step"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/back"
+            android:layout_alignBottom="@id/back"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/next_step" />
+    </RelativeLayout>
+
+</RelativeLayout>

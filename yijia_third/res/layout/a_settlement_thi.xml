@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/fragment_tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/tittle_edit" />
+
+    <Button
+        android:id="@+id/pre_settlement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pre_settlement" />
+
+    <LinearLayout
+        android:id="@+id/pre_settlement_choice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/btn_big_height"
+        android:layout_marginRight="@dimen/btn_big_height"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/msa_sa_settlement_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/msa_sa_settlement_detail" />
+
+        <Button
+            android:id="@+id/this_settlement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/this_settlement" />
+
+        <Button
+            android:id="@+id/settlement_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/settlement_date" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/history_settlement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/history_settlement" />
+
+</LinearLayout>

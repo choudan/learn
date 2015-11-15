@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/btn_big_height"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/sa_info"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_btn_height"
+        android:text="@string/sa_info" />
+
+    <Button
+        android:id="@+id/sa_team"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_btn_height"
+        android:layout_marginTop="0dp"
+        android:text="@string/sa_team" />
+
+    <LinearLayout
+        android:id="@+id/list_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/answered"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_btn_height"
+            android:text="@string/answered" />
+
+        <ListView
+            android:id="@+id/list_answered"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+        </ListView>
+
+        <Button
+            android:id="@+id/unanswered"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_btn_height"
+            android:text="@string/unanswered" />
+
+        <ListView
+            android:id="@+id/list_unanswered"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+        </ListView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ques_repository"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_btn_height"
+        android:layout_marginTop="0dp"
+        android:text="@string/ques_repository" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/settlement_record"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_btn_height"
+            android:layout_marginTop="0dp"
+            android:text="@string/settlement_record" />
+    </LinearLayout>
+
+</LinearLayout>

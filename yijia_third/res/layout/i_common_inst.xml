@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/inst_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/inst_info" />
+
+    <Button
+        android:id="@+id/msa_sa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/msa_sa" />
+
+    <ListView
+        android:id="@+id/msa_sa_choice"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:visibility="gone" >
+    </ListView>
+
+
+    <Button
+        android:id="@+id/user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/user" />
+
+    <Button
+        android:id="@+id/code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/code" />
+
+    <Button
+        android:id="@+id/user_statistics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/user_statistics" >
+    </Button>
+
+</LinearLayout>

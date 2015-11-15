@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/fragment_tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/tittle_edit" />
+
+    <Button
+        android:id="@+id/msa_settlement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/msa_settlement" />
+
+    <ListView
+        android:id="@+id/list_msa_settlement_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/btn_big_height"
+        android:layout_marginRight="@dimen/btn_big_height"
+        android:visibility="gone" >
+    </ListView>
+
+    <Button
+        android:id="@+id/inst_settlement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/inst_settlement" />
+
+    <ListView
+        android:id="@+id/list_inst_settlement_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/btn_big_height"
+        android:layout_marginRight="@dimen/btn_big_height"
+        android:visibility="gone" >
+    </ListView>
+
+</LinearLayout>

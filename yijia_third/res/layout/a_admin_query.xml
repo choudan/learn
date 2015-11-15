@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+   <include
+        android:id="@+id/fragment_tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/tittle_edit" />
+
+    <Button
+        android:id="@+id/query_code"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/box_margin_left_right"
+        android:layout_marginRight="@dimen/box_margin_left_right"
+        android:background="@drawable/app_choice_btn"
+        android:text="@string/code" >
+    </Button>
+
+    <Button
+        android:id="@+id/query_msa"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@id/query_code"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="@dimen/box_margin_left_right"
+        android:layout_marginRight="@dimen/box_margin_left_right"
+        android:background="@drawable/app_choice_btn"
+        android:text="@string/msa" >
+    </Button>
+
+    <Button
+        android:id="@+id/query_inst"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@id/query_msa"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="@dimen/box_margin_left_right"
+        android:layout_marginRight="@dimen/box_margin_left_right"
+        android:background="@drawable/app_choice_btn"
+        android:text="@string/inst" >
+    </Button>
+
+    <Button
+        android:id="@+id/service_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/query_code"
+        android:layout_marginLeft="@dimen/box_margin_left_right"
+        android:layout_marginRight="@dimen/box_margin_left_right"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/app_choice_btn"
+        android:text="@string/service_content" >
+    </Button>
+
+    <Button
+        android:id="@+id/logout_user"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/service_content"
+        android:layout_marginLeft="@dimen/box_margin_left_right"
+        android:layout_marginRight="@dimen/box_margin_left_right"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/app_choice_btn"
+        android:text="@string/logout_user" >
+    </Button>
+
+</RelativeLayout>
